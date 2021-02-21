@@ -3,11 +3,13 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
+html {
+  font-size: 12px;
+}
 
 body {
   margin: 0;
   padding: 0;
-  font-size: 12px;
   font-family:'Montserrat', sans-serif;
   color: #1F2D24;
   -webkit-font-smoothing: antialiased;

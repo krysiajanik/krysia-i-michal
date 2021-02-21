@@ -1,6 +1,15 @@
 .bar {
-    height: 2rem;
+    height: 2.5rem;
     width: 100%;
-    background-color: #C8DDD4;
-    ;
+    background-color: #c8ddd4;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.button {
+    margin-right: 1.4rem;
+    text-decoration: none;
+    background: none;
+    border: none;
 }
