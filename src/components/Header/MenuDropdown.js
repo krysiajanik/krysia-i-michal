@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import styles from "./MenuDropdown.module.scss";
 
 const MenuDropdown = (menuClick) => (
-  <nav onClick={ menuClick}>
+  <nav >
     <ul className={styles.wrapper}>
       <li className={styles.menuItem}>
         <NavLink exact

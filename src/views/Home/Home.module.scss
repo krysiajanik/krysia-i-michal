@@ -1,0 +1,39 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    list-style: none;
+    padding: 0 0 0.2rem 0;
+    margin: 0;
+}
+
+.menuItem {
+    font-family: "Lato", sans-serif;
+    
+    font-weight: 400;
+    
+    padding: 0.5rem 1rem;
+    text-align: center;
+
+    &:hover {
+    
+        scale: 1.1;
+      
+    }
+
+    &Link {
+        text-decoration: none;  
+        text-transform: uppercase;
+        color: #013A1E;
+        font-size: 2rem;
+        
+    }
+
+    &Text {
+        &:first-letter {
+            font-size: 130%;
+        }
+    }
+}
