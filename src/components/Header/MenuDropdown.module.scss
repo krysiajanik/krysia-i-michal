@@ -1,3 +1,15 @@
+@keyframes cascade {
+    0% {
+        transform: rotateX(-90deg);
+    }
+    70% {
+        transform: rotateX(20deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -5,13 +17,29 @@
     justify-content: center;
     background-color: #c8ddd4;
     position: absolute;
-    top: 2rem;
+    width: 100%;
+    top: 2.5rem;
     right: 0;
+    animation: cascade 300ms ease-in-out forwards;
+    transform-origin: top center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .menuItem {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1rem;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     text-align: center;
+
+    &:hover {
+        border: 0.01rem #013a1e inset;
+        border-radius: 0.6rem;
+        box-shadow: 0.1rem 0.1rem 0.1rem 0.05rem #013a1e63;
+    }
+
+    &Link {
+        text-decoration: none;  
+    }
 }
