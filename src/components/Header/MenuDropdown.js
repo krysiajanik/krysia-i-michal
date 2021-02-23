@@ -1,13 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 import styles from "./MenuDropdown.module.scss";
 
-const MenuDropdown = () => (
-  <nav>
+const MenuDropdown = (menuClick) => (
+  <nav onClick={ menuClick}>
     <ul className={styles.wrapper}>
       <li className={styles.menuItem}>
         <NavLink exact
-          activeClassName={styles.menuItemActive}
           to="/"
           className={styles.menuItemLink}
         >
@@ -16,7 +16,6 @@ const MenuDropdown = () => (
       </li>
       <li className={styles.menuItem}>
         <NavLink
-          activeClassName={styles.menuItemActive}
           to="/menu"
           className={styles.menuItemLink}
         >
@@ -26,7 +25,6 @@ const MenuDropdown = () => (
       
       <li className={styles.menuItem}>
         <NavLink
-          activeClassName={styles.menuItemActive}
           to="/drinkmenu"
           className={styles.menuItemLink}
         >
@@ -36,7 +34,6 @@ const MenuDropdown = () => (
      
       <li className={styles.menuItem}>
         <NavLink
-          activeClassName={styles.menuItemActive}
           to="/sittingchart"
           className={styles.menuItemLink}
         >
@@ -47,5 +44,9 @@ const MenuDropdown = () => (
     </ul>
   </nav>
 );
+
+MenuDropdown.propTypes = {
+    menuClick: PropTypes.func,
+}
 
 export default MenuDropdown;

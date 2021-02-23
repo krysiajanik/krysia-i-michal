@@ -23,7 +23,7 @@ class MenuBar extends React.Component {
         <button className={styles.button}  onClick={() => this.changeMenuState(menuVisible)}>
           {menuVisible ? <MenuCloseIcon /> : <MenuIcon />}       
         </button>
-        {menuVisible && <MenuDropdown />}
+        {menuVisible && <MenuDropdown menuClick={() => this.changeMenuState(menuVisible)}/>}
       </div>
     );
   }
