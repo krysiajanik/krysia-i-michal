@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./MenuBar.module.scss";
-import MenuIcon from "./MenuIcon.js";
-import MenuCloseIcon from "./MenuCloseIcon.js";
+import MenuIcon from "./Icons/MenuIcon.js";
+import MenuCloseIcon from "./Icons/MenuCloseIcon.js";
 import MenuDropdown from "./MenuDropdown";
+import HomeIcon from "./Icons/HomeIcon.js";
 
 class MenuBar extends React.Component {
   state = {
@@ -11,7 +12,7 @@ class MenuBar extends React.Component {
 
   changeMenuState = (isVisible) => {
     this.setState({
-     menuVisible: !isVisible,
+      menuVisible: !isVisible,
     });
   };
 
@@ -19,12 +20,22 @@ class MenuBar extends React.Component {
     const { menuVisible } = this.state;
 
     return (
-      <div className={styles.bar} onClick={() => this.changeMenuState(menuVisible)}>
-        <button className={styles.button} >
-          {menuVisible ? <MenuCloseIcon /> : <MenuIcon />}       
+      <>
+        <button className={styles.buttonHome}>
+          <a href="/">
+            <HomeIcon />
+          </a>
         </button>
-        {menuVisible && <MenuDropdown />}
-      </div>
+        <div
+          className={styles.bar}
+          onClick={() => this.changeMenuState(menuVisible)}
+        >
+          <button className={styles.button}>
+            {menuVisible ? <MenuCloseIcon /> : <MenuIcon />}
+          </button>
+          {menuVisible && <MenuDropdown />}
+        </div>
+      </>
     );
   }
 }
