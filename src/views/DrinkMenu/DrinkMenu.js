@@ -1,7 +1,9 @@
 import React from "react";
+import PageHeader from "../../components/PageHeader/PageHeader";
+
 
 const DrinkMenu = () => (
-  <h1>DrinkMenu</h1>
+  <PageHeader>Drink Menu</PageHeader>
 );
 
 export default DrinkMenu;

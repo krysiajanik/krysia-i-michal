@@ -1,7 +1,8 @@
 import React from "react";
+import PageHeader from "../../components/PageHeader/PageHeader";
 
 const Menu = () => (
-  <h1>Menu</h1>
+  <PageHeader>Menu</PageHeader>
 );
 
 export default Menu;

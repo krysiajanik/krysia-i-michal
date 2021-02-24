@@ -1,7 +1,9 @@
 import React from "react";
+import PageHeader from "../../components/PageHeader/PageHeader";
+
 
 const SittingChart = () => (
-  <h1>SittingChart</h1>
+  <PageHeader>Plan Stołów</PageHeader>
 );
 
 export default SittingChart;
