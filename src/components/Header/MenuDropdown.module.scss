@@ -23,7 +23,7 @@
     animation: cascade 300ms ease-in-out forwards;
     transform-origin: top center;
     list-style: none;
-    padding: 0 0 0.2rem 0;
+    padding: 0 0 0.5rem 0;
     margin: 0;
 }
 
@@ -36,10 +36,9 @@
     text-align: center;
 
     &:hover {
-        border: 0.01rem #c8ddd493 outset;
-        scale: 1.05;
-        // border-radius: 0.6rem;
-        box-shadow: 0.04rem 0.04rem 0.04rem 0.05rem #C8DDD463;
+        border-bottom: 0.01rem #4a5f558b;
+        box-shadow: 0.04rem 0.04rem 0.04rem 0.05rem #384f448b;
+        background-color: #394e4436;
     }
 
     &Link {

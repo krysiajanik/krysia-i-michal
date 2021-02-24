@@ -1,9 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import PropTypes from "prop-types";
 import styles from "./MenuDropdown.module.scss";
 
-const MenuDropdown = (menuClick) => (
+const MenuDropdown = () => (
   <nav >
     <ul className={styles.wrapper}>
       <li className={styles.menuItem}>
@@ -45,8 +44,5 @@ const MenuDropdown = (menuClick) => (
   </nav>
 );
 
-MenuDropdown.propTypes = {
-    menuClick: PropTypes.func,
-}
 
 export default MenuDropdown;

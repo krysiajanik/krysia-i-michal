@@ -11,17 +11,15 @@
 
 .menuItem {
     font-family: "Lato", sans-serif;
-    
     font-weight: 400;
-    
     padding: 0.5rem 1rem;
     text-align: center;
 
     &:hover {
-    
-        scale: 1.1;
-      
+        background-color: #99c1c039;
     }
+
+    
 
     &Link {
         text-decoration: none;  
@@ -29,11 +27,24 @@
         color: #013A1E;
         font-size: 2rem;
         
+        ::after {
+            text-align: center;
+            width: 25vw;
+            height: 1px;
+            // border: 1px solid #99C1C0;
+            background-color: #99C1C0;
+            content: "";
+            padding: 0;
+            margin: 2rem auto 0;
+            display: block;
+        }
+        
     }
 
     &Text {
         &:first-letter {
             font-size: 130%;
         }
+
     }
 }
