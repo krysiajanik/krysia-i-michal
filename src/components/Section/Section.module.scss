@@ -1,0 +1,16 @@
+.menuItem {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding: 0.25rem ;
+    text-align: center;
+    color: #000000;
+
+    &:first-letter {
+        font-size: 130%;
+    }
+}

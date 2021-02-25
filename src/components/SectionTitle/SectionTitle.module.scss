@@ -1,0 +1,16 @@
+.sectionTitle {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.75rem;
+    letter-spacing: 0.125em;
+    text-align: center;
+    color: #013a1e;
+    margin: 24px auto 0;
+    text-transform: uppercase;
+
+
+    &:first-letter {
+        font-size: 130%;
+    }
+}
