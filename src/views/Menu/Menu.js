@@ -45,7 +45,7 @@ const Menu = () => {
       {cakes.map((cake) => (
         <Section menuItem={cake} />
       ))}
-    
+
     </>
   );
 };
