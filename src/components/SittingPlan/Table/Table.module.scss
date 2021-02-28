@@ -5,6 +5,8 @@
     height: 48px;
     display: flex;
     align-items: center;
+    width: 160px;
+    margin: 0 10px;
     
 
     &Main {
@@ -12,21 +14,23 @@
         width: 204px;
     }
 
-    &Six {
+    &ForSix {
         @extend .table;
         width: 120px;
     }
 
-    &Eight {
+    &ForEight {
         @extend .table;
         width: 160px;
     }
 
     &Number {
         text-align: center;
+        align-self: center;
         color: #ffffff;
         font-style: normal;
         font-weight: 500;
         font-size: 24px;
+        margin: 0 auto;
     }
 }
