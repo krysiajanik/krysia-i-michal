@@ -1,0 +1,32 @@
+.table {
+    background: #013a1e;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    
+
+    &Main {
+        @extend .table;
+        width: 204px;
+    }
+
+    &Six {
+        @extend .table;
+        width: 120px;
+    }
+
+    &Eight {
+        @extend .table;
+        width: 160px;
+    }
+
+    &Number {
+        text-align: center;
+        color: #ffffff;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+    }
+}

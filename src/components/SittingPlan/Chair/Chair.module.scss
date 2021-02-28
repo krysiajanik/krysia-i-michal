@@ -1,0 +1,17 @@
+.chair {
+    background: #FAFAFA;
+    border: 0.5px solid #02341C;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;  
+
+    &:hover{
+        background: rgba(200, 221, 212, 0.75);
+    }
+
+    &Highlight{
+        @extend .chair;
+        background: rgba(200, 221, 212, 0.75);
+
+    }
+}
