@@ -18,23 +18,25 @@ class SearchBar extends React.Component {
     // })
   };
 
-  newArray = SittingArray.filter((item) =>
-    item.firstName
-      .toUpperCase()
-      .includes(
-        this.state.text.toUpperCase() ||
-          item.lastName.toUpperCase().includes(this.state.text.toUpperCase())
-      )
-  );
-
   render() {
-    console.log(SittingArray);
-    console.log(this.newArray);
+    const newArray = SittingArray.filter(
+      (item) =>
+        item.firstName.toUpperCase().includes(this.state.text.toUpperCase()) ||
+        item.lastName.toUpperCase().includes(this.state.text.toUpperCase())
+    );
+    console.log(this.state.text);
+    console.log(newArray);
 
     return (
       // <AppContext.Consumer>
       <div className={styles.wrapper}>
-        <div className={styles.searchBar}>
+        <div
+          className={
+            this.state.text.length > 2
+              ? styles.searchBarHints
+              : styles.searchBar
+          }
+        >
           <SearchIcon className={styles.icon} />
           <input
             aria-label="Znajdź gdzie kto siedzi"
@@ -43,6 +45,20 @@ class SearchBar extends React.Component {
             className={styles.input}
             value={this.state.text}
           />
+        </div>
+        <div
+          className={
+            this.state.text.length > 2 ? styles.inputHints : styles.inputNone
+          }
+        >
+          {newArray.map((person) => (
+            <div>
+              <p className={styles.inputHintsItem}>
+                    {person.firstName} {person.lastName}
+
+              </p>
+            </div>
+          ))}
         </div>
       </div>
       // </AppContext.Consumer>
