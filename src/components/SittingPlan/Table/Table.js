@@ -33,7 +33,7 @@ const Table = ({ tableNr, tableCapacity }) => {
 
 Table.propTypes = {
   tableNr: PropTypes.number.isRequired,
-  tableCapacity: PropTypes.string.isRequired,
+  tableCapacity: PropTypes.number.isRequired,
 };
 
 export default Table;

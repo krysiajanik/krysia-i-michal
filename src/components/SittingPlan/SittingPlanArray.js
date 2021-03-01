@@ -26,6 +26,4 @@ export const sittingPlanArray = [
 
 ];
 
-export default {
-    sittingPlanArray,
-};
+export default sittingPlanArray;
