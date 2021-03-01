@@ -30,8 +30,12 @@
         border-top: none !important;
         border-top-left-radius: 0 !important;
         border-top-right-radius: 0 !important;
+        flex-direction: column !important;
         &Item {
-            display: block;
+            margin: 0.2rem;
+            padding-left: 36px;
+            text-transform: uppercase;
+            text-align: left;
         }
     }
     &None {

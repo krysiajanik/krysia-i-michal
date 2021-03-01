@@ -24,8 +24,16 @@ class SearchBar extends React.Component {
         item.firstName.toUpperCase().includes(this.state.text.toUpperCase()) ||
         item.lastName.toUpperCase().includes(this.state.text.toUpperCase())
     );
+
+    // newPerson = (fName, lName) => {
+    //     const fName = newArray.map((person) => person.firstName);
+    //     const lName = newArray.map((person) => person.lastName);
+    //     return {
+
+    //     }
+    // }
+
     console.log(this.state.text);
-    console.log(newArray);
 
     return (
       // <AppContext.Consumer>
@@ -52,12 +60,9 @@ class SearchBar extends React.Component {
           }
         >
           {newArray.map((person) => (
-            <div>
-              <p className={styles.inputHintsItem}>
-                    {person.firstName} {person.lastName}
-
-              </p>
-            </div>
+            <p className={styles.inputHintsItem}>
+              {person.firstName} {person.lastName}
+            </p>
           ))}
         </div>
       </div>
