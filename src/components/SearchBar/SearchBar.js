@@ -1,5 +1,4 @@
 import React from "react";
-import AppContext from "../../context";
 import styles from "./SearchBar.module.scss";
 import SearchIcon from "./SearchIcon.js";
 import SittingPlanArray from "../../components/SittingPlan/SittingPlanArray";
@@ -8,14 +7,18 @@ const SittingArray = SittingPlanArray;
 class SearchBar extends React.Component {
   state = {
     text: "",
+    selectedId: [""],
   };
 
   handleInput = (e) => {
     this.setState({ text: e.target.value.toUpperCase() });
+  };
 
-    // searchResult = newArray.map(item => {
-    //     fName: newArray.firstName
-    // })
+  handleSelectedPerson = (firstName, lastName, tableNr, chairNr) => {
+    this.setState({
+      text: `${firstName} ${lastName}`,
+      selectedId: [tableNr, chairNr],
+    });
   };
 
   render() {
@@ -25,18 +28,9 @@ class SearchBar extends React.Component {
         item.lastName.toUpperCase().includes(this.state.text.toUpperCase())
     );
 
-    // newPerson = (fName, lName) => {
-    //     const fName = newArray.map((person) => person.firstName);
-    //     const lName = newArray.map((person) => person.lastName);
-    //     return {
-
-    //     }
-    // }
-
     console.log(this.state.text);
 
     return (
-      // <AppContext.Consumer>
       <div className={styles.wrapper}>
         <div
           className={
@@ -60,13 +54,18 @@ class SearchBar extends React.Component {
           }
         >
           {newArray.map((person) => (
-            <p className={styles.inputHintsItem}>
+            <p
+              key={`${person.firstName}_${person.lastName}`}
+              className={styles.inputHintsItem}
+              onClick={() =>
+                this.handleSelectedPerson(person.firstName, person.lastName, person.tableNr, person.chairNr)
+              }
+            >
               {person.firstName} {person.lastName}
             </p>
           ))}
         </div>
       </div>
-      // </AppContext.Consumer>
     );
   }
 }

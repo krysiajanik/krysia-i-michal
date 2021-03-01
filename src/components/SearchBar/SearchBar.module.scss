@@ -33,9 +33,13 @@
         flex-direction: column !important;
         &Item {
             margin: 0.2rem;
-            padding-left: 36px;
+            padding:  6px 6px 6px 36px;
             text-transform: uppercase;
             text-align: left;
+            &:hover {
+                background: rgba(200, 221, 212, 0.75);
+                cursor: pointer;
+            }
         }
     }
     &None {
