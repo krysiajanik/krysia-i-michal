@@ -1,20 +1,25 @@
 import React from "react";
-// import AppContext from "../../context";
+import AppContext from "../../context";
 import Chair from "./Chair/Chair";
 import styles from "./SittingPlan.module.scss";
 import Table from "./Table/Table";
 
 class SittingPlan extends React.Component {
+
+    static contextType = AppContext;
+
   render() {
+    
+
     return (
-    //   <AppContext.Consumer>
+      
         <div className={styles.wrapper}>
           <div className={styles.tableGrid}>
             <div className={styles.chairRow}>
-              <Chair chairNr={1}></Chair>
-              <Chair chairNr={2}></Chair>
-              <Chair chairNr={3}></Chair>
-              <Chair chairNr={4}></Chair>
+              <Chair chairNr={1} showChair={this.context.chairNr}></Chair>
+              <Chair chairNr={2} showChair={this.context.chairNr}></Chair>
+              <Chair chairNr={3} showChair={this.context.chairNr}></Chair>
+              <Chair chairNr={4} showChair={this.context.chairNr}></Chair>
             </div>
             <Table tableNr={2} tableCapacity={8}></Table>
             <div className={styles.chairRow}>
@@ -25,7 +30,7 @@ class SittingPlan extends React.Component {
             </div>
           </div>
         </div>
-    //   </AppContext.Consumer>
+     
     );
   }
 }

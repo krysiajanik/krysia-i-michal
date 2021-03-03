@@ -51,10 +51,11 @@ class SittingChart extends React.Component {
   };
 
   render() {
-    // const contextElements = {
-    //   tableNr: this.state.selectedId[0],
-    //   chairNr: this.state.selectedId[1],
-    // };
+    const contextElements = {
+       updateSelectedPerson: this.updateSelectedPerson,
+       tableNr: this.state.tableNr,
+       chairNr: this.state.chairNr,
+    };
 
     //  const newArray = SittingArray.filter(
     //   (item) =>
@@ -66,7 +67,7 @@ class SittingChart extends React.Component {
       <>
         <PageHeader>Plan Stołów</PageHeader>
         <AppContext.Provider
-          value={{ updateSelectedPerson: this.updateSelectedPerson }}
+          value={contextElements}
         >
           <SearchBar></SearchBar>
           <SittingPlan></SittingPlan>
