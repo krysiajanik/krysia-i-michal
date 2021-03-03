@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import AppContext from "../../context";
 import styles from "./SearchBar.module.scss";
 import SearchIcon from "./SearchIcon.js";
 import SittingPlanArray from "../../components/SittingPlan/SittingPlanArray";
@@ -7,8 +8,11 @@ const SittingArray = SittingPlanArray;
 class SearchBar extends React.Component {
   state = {
     text: "",
-    selectedId: [""],
+    selectedTable: "",
+    selectedChair: "",
   };
+
+  static contextType = AppContext;
 
   handleInput = (e) => {
     this.setState({ text: e.target.value.toUpperCase() });
@@ -17,7 +21,8 @@ class SearchBar extends React.Component {
   handleSelectedPerson = (firstName, lastName, tableNr, chairNr) => {
     this.setState({
       text: `${firstName} ${lastName}`,
-      selectedId: [tableNr, chairNr],
+      selectedTable: tableNr,
+      selectedChair: chairNr,
     });
   };
 
@@ -28,9 +33,14 @@ class SearchBar extends React.Component {
         item.lastName.toUpperCase().includes(this.state.text.toUpperCase())
     );
 
-    console.log(this.state.text);
+    
+    // const contextElements = {
+    //     tableNr: this.state.selectedId[0],
+    //     chairNr: this.state.selectedId[1],
+    // }
 
     return (
+      //<AppContext.Provider value={contextElements}>
       <div className={styles.wrapper}>
         <div
           className={
@@ -57,15 +67,30 @@ class SearchBar extends React.Component {
             <p
               key={`${person.firstName}_${person.lastName}`}
               className={styles.inputHintsItem}
-              onClick={() =>
-                this.handleSelectedPerson(person.firstName, person.lastName, person.tableNr, person.chairNr)
-              }
+              onClick={() => {
+                this.handleSelectedPerson(
+                  person.firstName,
+                  person.lastName,
+                  person.tableNr,
+                  person.chairNr
+                );
+                
+                this.context.updateSelectedPerson(person.tableNr, person.chairNr)
+                // <AppContext.Consumer>
+                //     {(context) => (
+                //         //context.updateSelectedPerson([person.tableNr, person.chairNr]);
+                //         console.log(context)
+                //     )}
+                // </AppContext.Consumer>
+                // this.state.selectedChair = this.props.selectedChair;
+              }}
             >
               {person.firstName} {person.lastName}
             </p>
           ))}
         </div>
       </div>
+      //</AppContext.Provider>
     );
   }
 }
