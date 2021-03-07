@@ -13,25 +13,22 @@ function Chair(props) {
   const chairNr = props.chairNr;
   const row = props.row;
 
+  
   function personClass() {
     let newClass;
     if (isShown === true) {
       switch (row) {
         case "up":
           newClass = "styles.personShowUp";
-          console.log(newClass);
           break;
         case "down":
           newClass = "styles.personShowDown";
-          console.log(newClass);
           break;
         case "left":
           newClass = "styles.personShowLeft";
-          console.log(newClass);
           break;
         case "right":
           newClass = "styles.personShowRight";
-          console.log(newClass);
           break;
         default:
           newClass = "styles.personShow";
@@ -43,10 +40,19 @@ function Chair(props) {
     }
   }
 
-  // "up";
-  //   const rowDown = "down";
-  //   const rowLeft = "left";
-  //   const rowRight = "right";
+  const personMap = SittingArray.map((person) => (
+    <p
+      key={`${person.tableNr}_${person.chairNr}`}
+      className={personClass()}
+    >
+      {person.tableNr === tableNr && person.chairNr === chairNr
+        ? `${person.firstName} ${person.lastName}`
+        : ""}
+    </p>
+  ))
+    
+
+
 
   return (
     <div
@@ -58,7 +64,10 @@ function Chair(props) {
       onMouseEnter={() => setIsShown(true)}
       onMouseLeave={() => setIsShown(false)}
     >
-      {SittingArray.map((person) => (
+      {personMap}
+      {console.log(personClass())}
+      {console.log(personMap)}
+      {/* {SittingArray.map((person) => (
         <p
           key={`${person.tableNr}_${person.chairNr}`}
           className={personClass(row)}
@@ -67,7 +76,7 @@ function Chair(props) {
             ? `${person.firstName} ${person.lastName}`
             : ""}
         </p>
-      ))}
+      ))} */}
     </div>
   );
 }

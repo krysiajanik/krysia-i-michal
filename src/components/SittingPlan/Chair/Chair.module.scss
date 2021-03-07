@@ -25,6 +25,11 @@
         color: #000000;
         letter-spacing: 4px;
         font-size: 1.2rem;
+
+        &Up {
+            display: relative;
+            bottom: 1rem;
+        }
     }
 
     &Hide {
@@ -33,6 +38,3 @@
     }
     }
 
-    .checking {
-        margin-bottom: 28px;
-    }
