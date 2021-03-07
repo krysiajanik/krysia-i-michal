@@ -9,38 +9,10 @@ import SittingPlan from "../../components/SittingPlan/SittingPlan";
 class SittingChart extends React.Component {
   state = {
     selectedId: ["", ""],
-    tableNr: "",
-    chairNr: "",
+    tableNr: 0,
+    chairNr: 0,
   };
 
-  // handleInput = (e) => {
-  //   this.setState({ text: e.target.value.toUpperCase() });
-  // };
-
-  // handleSelectedPerson = (firstName, lastName, tableNr, chairNr) => {
-  //   this.setState({
-  //     text: `${firstName} ${lastName}`,
-  //     selectedId: [tableNr, chairNr],
-  //   });
-  // };
-
-  // displayHints = () => {
-  //   newArray.map((person) => (
-  //     <p
-  //       key={`${person.firstName}_${person.lastName}`}
-  //       className={styles.inputHintsItem}
-  //       onClick={() => handleSelectedPerson(
-  //           person.firstName,
-  //           person.lastName,
-  //           person.tableNr,
-  //           person.chairNr
-  //         )
-  //       }
-  //     >
-  //       {person.firstName} {person.lastName}
-  //     </p>
-  //   ));
-  // };
 
   updateSelectedPerson = (tableNr, chairNr) => {
     this.setState({
@@ -57,12 +29,6 @@ class SittingChart extends React.Component {
        chairNr: this.state.chairNr,
     };
 
-    //  const newArray = SittingArray.filter(
-    //   (item) =>
-    //     item.firstName.toUpperCase().includes(this.state.text.toUpperCase()) ||
-    //     item.lastName.toUpperCase().includes(this.state.text.toUpperCase())
-    // );
-
     return (
       <>
         <PageHeader>Plan Stołów</PageHeader>
@@ -76,36 +42,5 @@ class SittingChart extends React.Component {
     );
   }
 }
-
-// inputText={this.state.text}
-// handleInput={() => this.handleInput()}
-// hintsArray={newArray}>
-
-// displayHints={() =>this.displayHints()}
-// handleSelectedPerson={
-//   () => this.handleSelectedPerson()
-//   person.firstName,
-//   person.lastName,
-//   person.tableNr,
-//   person.chairNr
-// )
-//   }
-
-// {newArray.map((person) => (
-//   <p
-//     key={`${person.firstName}_${person.lastName}`}
-//     className={styles.inputHintsItem}
-//     onClick={() =>
-//       handleSelectedPerson(
-//         person.firstName,
-//         person.lastName,
-//         person.tableNr,
-//         person.chairNr
-//       )
-//     }
-//   >
-//     {person.firstName} {person.lastName}
-//   </p>
-// ))} */}
 
 export default SittingChart;

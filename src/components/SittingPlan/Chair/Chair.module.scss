@@ -18,3 +18,17 @@
 
     }
 }
+
+.person {
+    &Show {
+        text-align: center;
+        color: #000000;
+        letter-spacing: 4px;
+        font-size: 1.2rem;
+    }
+
+    &Hide {
+        display: none;
+
+    }
+    }

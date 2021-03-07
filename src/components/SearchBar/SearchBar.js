@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import AppContext from "../../context";
 import styles from "./SearchBar.module.scss";
 import SearchIcon from "./SearchIcon.js";
@@ -8,8 +8,6 @@ const SittingArray = SittingPlanArray;
 class SearchBar extends React.Component {
   state = {
     text: "",
-    selectedTable: "",
-    selectedChair: "",
   };
 
   static contextType = AppContext;
