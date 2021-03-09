@@ -1,3 +1,9 @@
+.chairRow {
+    display: flex;
+    flex-direction: row;
+}
+
+
 .table {
     background: #013a1e;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -7,22 +13,6 @@
     align-items: center;
     width: 160px;
     margin: 0 10px;
-    
-
-    &Main {
-        @extend .table;
-        width: 204px;
-    }
-
-    &ForSix {
-        @extend .table;
-        width: 120px;
-    }
-
-    &ForEight {
-        @extend .table;
-        width: 160px;
-    }
 
     &Number {
         text-align: center;
@@ -33,4 +23,11 @@
         font-size: 24px;
         margin: 0 auto;
     }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px auto;
 }

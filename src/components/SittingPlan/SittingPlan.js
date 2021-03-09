@@ -13,21 +13,8 @@ class SittingPlan extends React.Component {
 
     return (
       <div className={styles.wrapper}>
-        <div className={styles.tableGrid}>
-          <div className={styles.chairRow}>
-            <Chair chairNr={1} tableNr={2} row={rowUp}></Chair>
-            <Chair chairNr={2} tableNr={2} row={rowUp}></Chair>
-            <Chair chairNr={3} tableNr={2} row={rowUp}></Chair>
-            <Chair chairNr={4} tableNr={2} row={rowUp}></Chair>
-          </div>
-          <Table tableNr={2} tableCapacity={8}></Table>
-          <div className={styles.chairRow}>
-            <Chair chairNr={5} tableNr={2} row={rowDown}></Chair>
-            <Chair chairNr={6} tableNr={2} row={rowDown}></Chair>
-            <Chair chairNr={7} tableNr={2} row={rowDown}></Chair>
-            <Chair chairNr={8} tableNr={2} row={rowDown}></Chair>
-          </div>
-        </div>
+        <Table assignedTableNr={2} tableCapacity={8}></Table>
+        
       </div>
     );
   }

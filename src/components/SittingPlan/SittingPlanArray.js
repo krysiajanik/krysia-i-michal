@@ -23,6 +23,30 @@ export const sittingPlanArray = [
         tableNr: 2,
         chairNr: 4,
     },
+    {
+        firstName:"Elizabeth",
+        lastName:"Darcy",
+        tableNr: 2,
+        chairNr: 5,
+    },
+    {
+        firstName:"Fitzwilliam",
+        lastName:"Darcy",
+        tableNr: 2,
+        chairNr: 6,
+    },
+    {
+        firstName:"Jane",
+        lastName:"Bingley",
+        tableNr: 2,
+        chairNr: 7,
+    },
+    {
+        firstName:"Charles",
+        lastName:"Bingley",
+        tableNr: 2,
+        chairNr: 8,
+    },
 
 ];
 

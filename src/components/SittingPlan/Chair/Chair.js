@@ -11,9 +11,9 @@ function Chair(props) {
   const selectedPerson = useContext(AppContext);
   const tableNr = props.tableNr;
   const chairNr = props.chairNr;
+  const person = props.person;
   const row = props.row;
 
-  
   function personClass() {
     let newClass;
     if (isShown === true) {
@@ -41,18 +41,12 @@ function Chair(props) {
   }
 
   const personMap = SittingArray.map((person) => (
-    <p
-      key={`${person.tableNr}_${person.chairNr}`}
-      className={personClass()}
-    >
+    <p key={`${person.tableNr}_${person.chairNr}`} className={personClass()}>
       {person.tableNr === tableNr && person.chairNr === chairNr
         ? `${person.firstName} ${person.lastName}`
         : ""}
     </p>
-  ))
-    
-
-
+  ));
 
   return (
     <div
@@ -64,9 +58,9 @@ function Chair(props) {
       onMouseEnter={() => setIsShown(true)}
       onMouseLeave={() => setIsShown(false)}
     >
-      {personMap}
-      {console.log(personClass())}
-      {console.log(personMap)}
+      <p className={isShown ? styles.personShow : styles.personHide}>
+        {person}
+      </p>
       {/* {SittingArray.map((person) => (
         <p
           key={`${person.tableNr}_${person.chairNr}`}

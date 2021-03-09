@@ -1,38 +1,62 @@
 import React from "react";
 import styles from "./Table.module.scss";
-import PropTypes from "prop-types";
+import PropTypes, { resetWarningCache } from "prop-types";
+import SittingPlanArray from "../SittingPlanArray";
+import Chair from "../Chair/Chair";
 
-const Table = ({ tableNr, tableCapacity }) => {
+const SittingArray = SittingPlanArray;
 
-  function tableSize() {
-    if (tableCapacity === 6) {
-      return (
-        <div className={styles.tableForSix}>
-      <p className={styles.tableNumber}>{tableNr}</p>
-    </div>)
-    }
-    else if (tableCapacity === 8) {
-      return (
-        <div className={styles.tableForEight}>
-      <p className={styles.tableNumber}>{tableNr}</p>
-    </div>)
-    }
-    else {
-      return (
-        <div className={styles.tableMain}>
-      <p className={styles.tableNumber}>{tableNr}</p>
-    </div>)
-    }
+class Table extends React.Component {
+  render() {
+    const tableArray = SittingArray.filter(
+      (item) => item.tableNr === this.props.assignedTableNr
+    );
+
+    const chairCount = tableArray.length;
+    const chairRowCount = chairCount / 2;
+
+    const chairRowOne = tableArray.filter(
+      (item) => item.chairNr <= chairRowCount
+    );
+    const chairRowTwo = tableArray.filter(
+      (item) => item.chairNr > chairRowCount
+    );
+
+    return (
+      <>
+        <div className={styles.wrapper}>
+          <div className={styles.chairRow}>
+            {chairRowOne.map((person) => (
+              <Chair
+                chairNr={person.chairNr}
+                tableNr={person.tableNr}
+                person={`${person.firstName} ${person.lastName}`}
+                key={`${person.tableNr}_${person.chairNr}`}
+              ></Chair>
+            ))}
+          </div>
+
+          <div className={styles.table}>
+            <p className={styles.tableNumber}>{this.props.assignedTableNr}</p>
+          </div>
+          <div className={styles.chairRow}>
+            {chairRowTwo.map((person) => (
+              <Chair
+                chairNr={person.chairNr}
+                tableNr={person.tableNr}
+                person={`${person.firstName} ${person.lastName}`}
+                key={`${person.tableNr}_${person.chairNr}`}
+              ></Chair>
+            ))}
+          </div>
+        </div>
+      </>
+    );
   }
-
-
-  return (
-    tableSize()
-  );
-};
+}
 
 Table.propTypes = {
-  tableNr: PropTypes.number.isRequired,
+  assignedTableNr: PropTypes.number.isRequired,
   tableCapacity: PropTypes.number.isRequired,
 };
 
