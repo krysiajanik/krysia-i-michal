@@ -32,6 +32,7 @@ class Table extends React.Component {
                 tableNr={person.tableNr}
                 person={`${person.firstName} ${person.lastName}`}
                 key={`${person.tableNr}_${person.chairNr}`}
+                row={'up'}
               ></Chair>
             ))}
           </div>
@@ -46,6 +47,7 @@ class Table extends React.Component {
                 tableNr={person.tableNr}
                 person={`${person.firstName} ${person.lastName}`}
                 key={`${person.tableNr}_${person.chairNr}`}
+                row={'down'}
               ></Chair>
             ))}
           </div>

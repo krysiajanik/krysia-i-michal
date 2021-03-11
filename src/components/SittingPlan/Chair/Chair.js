@@ -8,74 +8,83 @@ const SittingArray = SittingPlanArray;
 
 function Chair(props) {
   const [isShown, setIsShown] = useState(false);
+  const [isSelected, setIsSelected] = useState(false);
+  const [isMouseOver, setIsMouseOver] = useState(false);
   const selectedPerson = useContext(AppContext);
   const tableNr = props.tableNr;
   const chairNr = props.chairNr;
   const person = props.person;
   const row = props.row;
 
-  function personClass() {
-    let newClass;
-    if (isShown === true) {
-      switch (row) {
-        case "up":
-          newClass = "styles.personShowUp";
-          break;
-        case "down":
-          newClass = "styles.personShowDown";
-          break;
-        case "left":
-          newClass = "styles.personShowLeft";
-          break;
-        case "right":
-          newClass = "styles.personShowRight";
-          break;
-        default:
-          newClass = "styles.personShow";
-      }
-      return newClass;
-    } else {
-      newClass = "styles.personHide";
-      return newClass;
+  function handleMouseOver(bool) {
+    setIsShown(bool);
+    setIsMouseOver(bool);
+    setIsSelected(false);
+  }
+
+  function handleClick() {
+    if (!isMouseOver) {
+      isShown ? setIsShown(false) : setIsShown(true);
     }
   }
 
-  const personMap = SittingArray.map((person) => (
-    <p key={`${person.tableNr}_${person.chairNr}`} className={personClass()}>
-      {person.tableNr === tableNr && person.chairNr === chairNr
-        ? `${person.firstName} ${person.lastName}`
-        : ""}
-    </p>
-  ));
+  function handleSelected() {
+    selectedPerson.tableNr === tableNr && selectedPerson.chairNr === chairNr
+      ? setIsSelected(true)
+      : setIsSelected(false);
+  }
 
-  return (
-    <div
-      className={
-        selectedPerson.tableNr === tableNr && selectedPerson.chairNr === chairNr
-          ? styles.chairHighlight
-          : styles.chair
-      }
-      onMouseEnter={() => setIsShown(true)}
-      onMouseLeave={() => setIsShown(false)}
-    >
-      <p className={isShown ? styles.personShow : styles.personHide}>
-        {person}
-      </p>
-      {/* {SittingArray.map((person) => (
-        <p
-          key={`${person.tableNr}_${person.chairNr}`}
-          className={personClass(row)}
+  function handleRender() {
+    if (
+      isShown ||
+      (selectedPerson.tableNr === tableNr && selectedPerson.chairNr === chairNr)
+    ) {
+      return (
+        <div
+          className={styles.chairHighlight}
+          onMouseEnter={() => handleMouseOver(true)}
+          onMouseLeave={() => handleMouseOver(false)}
+          onClick={() => handleClick()}
         >
-          {person.tableNr === tableNr && person.chairNr === chairNr
-            ? `${person.firstName} ${person.lastName}`
-            : ""}
-        </p>
-      ))} */}
-    </div>
-  );
-}
+          <p
+            className={
+              row === "up" ? styles.personShowUp : styles.personShowDown
+            }
+          >
+            {person}
+          </p>
+        </div>
+      );
+    } else if (!isSelected) {
+      return (
+        <div
+          className={styles.chair}
+          onMouseEnter={() => handleMouseOver(true)}
+          onMouseLeave={() => handleMouseOver(false)}
+          onClick={() => handleClick()}
+        >
+         
+        </div>
+      );
+    }
+  }
 
-// isShown ? styles.personShow : styles.personHide
+  return handleRender();
+  // <div
+  //   className={
+  //     selectedPerson.tableNr === tableNr && selectedPerson.chairNr === chairNr
+  //       ? styles.chairHighlight
+  //       : styles.chair
+  //   }
+  //   onMouseEnter={() => handleMouseOver(true)}
+  //   onMouseLeave={() => handleMouseOver(false)}
+  //   onClick={() => handleClick()}
+  // >
+  //   <p className={isShown ? styles.personShow : styles.personHide}>
+  //     {person}
+  //   </p>
+  // </div>
+}
 
 Chair.propTypes = {
   chairNr: PropTypes.number.isRequired,
