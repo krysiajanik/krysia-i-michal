@@ -2,15 +2,11 @@ import React, { useContext, useState } from "react";
 import AppContext from "../../../context";
 import styles from "./Chair.module.scss";
 import PropTypes from "prop-types";
-import SittingPlanArray from "../SittingPlanArray";
-
-const SittingArray = SittingPlanArray;
 
 function Chair(props) {
   const [isShown, setIsShown] = useState(false);
-  const [isSelected, setIsSelected] = useState(false);
   const [isMouseOver, setIsMouseOver] = useState(false);
-  const selectedPerson = useContext(AppContext);
+  const context = useContext(AppContext);
   const tableNr = props.tableNr;
   const chairNr = props.chairNr;
   const person = props.person;
@@ -19,7 +15,7 @@ function Chair(props) {
   function handleMouseOver(bool) {
     setIsShown(bool);
     setIsMouseOver(bool);
-    setIsSelected(false);
+    context.clearSelectedPerson()
   }
 
   function handleClick() {
@@ -28,16 +24,10 @@ function Chair(props) {
     }
   }
 
-  function handleSelected() {
-    selectedPerson.tableNr === tableNr && selectedPerson.chairNr === chairNr
-      ? setIsSelected(true)
-      : setIsSelected(false);
-  }
-
   function handleRender() {
     if (
       isShown ||
-      (selectedPerson.tableNr === tableNr && selectedPerson.chairNr === chairNr)
+      (context.tableNr === tableNr && context.chairNr === chairNr)
     ) {
       return (
         <div
@@ -55,7 +45,7 @@ function Chair(props) {
           </p>
         </div>
       );
-    } else if (!isSelected) {
+    } else {
       return (
         <div
           className={styles.chair}
@@ -70,25 +60,14 @@ function Chair(props) {
   }
 
   return handleRender();
-  // <div
-  //   className={
-  //     selectedPerson.tableNr === tableNr && selectedPerson.chairNr === chairNr
-  //       ? styles.chairHighlight
-  //       : styles.chair
-  //   }
-  //   onMouseEnter={() => handleMouseOver(true)}
-  //   onMouseLeave={() => handleMouseOver(false)}
-  //   onClick={() => handleClick()}
-  // >
-  //   <p className={isShown ? styles.personShow : styles.personHide}>
-  //     {person}
-  //   </p>
-  // </div>
+
 }
 
 Chair.propTypes = {
   chairNr: PropTypes.number.isRequired,
   tableNr: PropTypes.number.isRequired,
+  person: PropTypes.string.isRequired,
+  tableNr: PropTypes.string.isRequired,
 };
 
 export default Chair;

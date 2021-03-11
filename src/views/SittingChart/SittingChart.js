@@ -3,9 +3,7 @@ import AppContext from "../../context";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import SittingPlan from "../../components/SittingPlan/SittingPlan";
-// import SittingPlanArray from "../../components/SittingPlan/SittingPlanArray";
 
-// const SittingArray = SittingPlanArray;
 class SittingChart extends React.Component {
   state = {
     selectedId: ["", ""],
@@ -22,9 +20,17 @@ class SittingChart extends React.Component {
     });
   };
 
+  clearSelectedPerson = () => {
+      this.setState({
+        chairNr: 0,
+        tableNr: 0,
+      });
+  }
+
   render() {
     const contextElements = {
        updateSelectedPerson: this.updateSelectedPerson,
+       clearSelectedPerson: this.clearSelectedPerson,
        tableNr: this.state.tableNr,
        chairNr: this.state.chairNr,
     };
