@@ -8,12 +8,15 @@ const SittingArray = SittingPlanArray;
 class SearchBar extends React.Component {
   state = {
     text: "",
+    displayHints: false,
   };
 
   static contextType = AppContext;
 
   handleInput = (e) => {
-    this.setState({ text: e.target.value.toUpperCase() });
+    this.setState({ 
+      text: e.target.value.toUpperCase(),
+      displayHints: this.state.text.length > 0 ? true : false});
   };
 
   handleSelectedPerson = (firstName, lastName, tableNr, chairNr) => {
@@ -21,6 +24,7 @@ class SearchBar extends React.Component {
       text: `${firstName} ${lastName}`,
       selectedTable: tableNr,
       selectedChair: chairNr,
+      displayHints: false,
     });
   };
 
@@ -31,21 +35,10 @@ class SearchBar extends React.Component {
         item.lastName.toUpperCase().includes(this.state.text.toUpperCase())
     );
 
-    
-    // const contextElements = {
-    //     tableNr: this.state.selectedId[0],
-    //     chairNr: this.state.selectedId[1],
-    // }
-
     return (
-      //<AppContext.Provider value={contextElements}>
       <div className={styles.wrapper}>
         <div
-          className={
-            this.state.text.length > 2
-              ? styles.searchBarHints
-              : styles.searchBar
-          }
+          className={this.state.displayHints ? styles.searchBarHints : styles.searchBar}
         >
           <SearchIcon className={styles.icon} />
           <input
@@ -58,7 +51,7 @@ class SearchBar extends React.Component {
         </div>
         <div
           className={
-            this.state.text.length > 2 ? styles.inputHints : styles.inputNone
+            this.state.displayHints ? styles.inputHints : styles.inputNone
           }
         >
           {newArray.map((person) => (
@@ -72,15 +65,11 @@ class SearchBar extends React.Component {
                   person.tableNr,
                   person.chairNr
                 );
-                
-                this.context.updateSelectedPerson(person.tableNr, person.chairNr)
-                // <AppContext.Consumer>
-                //     {(context) => (
-                //         //context.updateSelectedPerson([person.tableNr, person.chairNr]);
-                //         console.log(context)
-                //     )}
-                // </AppContext.Consumer>
-                // this.state.selectedChair = this.props.selectedChair;
+
+                this.context.updateSelectedPerson(
+                  person.tableNr,
+                  person.chairNr
+                );
               }}
             >
               {person.firstName} {person.lastName}
@@ -88,7 +77,6 @@ class SearchBar extends React.Component {
           ))}
         </div>
       </div>
-      //</AppContext.Provider>
     );
   }
 }
