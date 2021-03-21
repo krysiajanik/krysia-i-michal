@@ -3,46 +3,25 @@ import { NavLink } from "react-router-dom";
 import styles from "./MenuDropdown.module.scss";
 
 const MenuDropdown = () => (
-  <nav >
+  <nav>
     <ul className={styles.wrapper}>
-      <li className={styles.menuItem}>
-        <NavLink exact
-          to="/"
-          className={styles.menuItemLink}
-        >
-            Strona główna
-        </NavLink>
-      </li>
-      <li className={styles.menuItem}>
-        <NavLink
-          to="/menu"
-          className={styles.menuItemLink}
-        >
-            Co jemy?
-        </NavLink>
-      </li>
-      
-      <li className={styles.menuItem}>
-        <NavLink
-          to="/drinkmenu"
-          className={styles.menuItemLink}
-        >
-            Co pijemy?
-        </NavLink>
-      </li>
-     
-      <li className={styles.menuItem}>
-        <NavLink
-          to="/sittingchart"
-          className={styles.menuItemLink}
-        >
-            Gdzie siedzę?
-        </NavLink>
-      </li>
-      
+      <NavLink exact to="/" className={styles.menuItemLink}>
+        <li className={styles.menuItem}>Strona główna</li>
+      </NavLink>
+
+      <NavLink to="/menu" className={styles.menuItemLink}>
+        <li className={styles.menuItem}>Co jemy?</li>
+      </NavLink>
+
+      <NavLink to="/drinkmenu" className={styles.menuItemLink}>
+        <li className={styles.menuItem}>Co pijemy?</li>
+      </NavLink>
+
+      <NavLink to="/sittingchart" className={styles.menuItemLink}>
+        <li className={styles.menuItem}>Gdzie siedzę?</li>
+      </NavLink>
     </ul>
   </nav>
 );
-
 
 export default MenuDropdown;
