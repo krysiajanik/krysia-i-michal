@@ -5,19 +5,19 @@ import styles from "./MenuDropdown.module.scss";
 const MenuDropdown = () => (
   <nav>
     <ul className={styles.wrapper}>
-      <NavLink exact to="/" className={styles.menuItemLink}>
+      <NavLink exact to="/krysia-i-michal/" className={styles.menuItemLink}>
         <li className={styles.menuItem}>Strona główna</li>
       </NavLink>
 
-      <NavLink to="/menu" className={styles.menuItemLink}>
+      <NavLink to="/krysia-i-michal/menu" className={styles.menuItemLink}>
         <li className={styles.menuItem}>Co jemy?</li>
       </NavLink>
 
-      <NavLink to="/drinkmenu" className={styles.menuItemLink}>
+      <NavLink to="/krysia-i-michal/drinkmenu" className={styles.menuItemLink}>
         <li className={styles.menuItem}>Co pijemy?</li>
       </NavLink>
 
-      <NavLink to="/sittingchart" className={styles.menuItemLink}>
+      <NavLink to="/krysia-i-michal/sittingchart" className={styles.menuItemLink}>
         <li className={styles.menuItem}>Gdzie siedzę?</li>
       </NavLink>
     </ul>
