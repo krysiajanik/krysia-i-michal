@@ -7,12 +7,13 @@
     width: 100%;
     display: inline-block;
     margin: 8px 0;
+    padding: 2px;
     background: none;
     border: none;
     color: #013a1e;
     text-transform: uppercase;
-    font-size: 1.3rem;
-    letter-spacing: 3px;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
     &:focus{
         outline: 1px  rgba(177, 205, 193, 0.027) solid;
     }

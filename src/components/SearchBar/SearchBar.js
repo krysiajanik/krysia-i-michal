@@ -3,6 +3,7 @@ import AppContext from "../../context";
 import styles from "./SearchBar.module.scss";
 import SearchIcon from "./SearchIcon.js";
 import SittingPlanArray from "../../components/SittingPlan/SittingPlanArray";
+import ClearSearch from "./ClearSearch.js"
 
 const SittingArray = SittingPlanArray;
 class SearchBar extends React.Component {
@@ -28,6 +29,13 @@ class SearchBar extends React.Component {
     });
   };
 
+  handleClear = () => {
+    this.setState({
+      text: "",
+      displayHints: false,
+    })
+  }
+
   render() {
     const newArray = SittingArray.filter(
       (item) =>
@@ -48,6 +56,7 @@ class SearchBar extends React.Component {
             className={styles.input}
             value={this.state.text}
           />
+          {this.state.text != "" ? <ClearSearch  className={styles.icon} onClick={this.handleClear}/> : null}
         </div>
         <div
           className={

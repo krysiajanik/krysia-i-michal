@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Table.module.scss";
-import PropTypes, { resetWarningCache } from "prop-types";
+import PropTypes from "prop-types";
 import SittingPlanArray from "../SittingPlanArray";
 import Chair from "../Chair/Chair";
 
