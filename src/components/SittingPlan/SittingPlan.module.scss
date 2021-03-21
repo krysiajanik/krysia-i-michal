@@ -1,25 +1,18 @@
 .wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "main main main";
+
     align-items: center;
     width: 100%;
     margin: 24px auto;
 }
 
-.tableGrid {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    margin: 0 auto;
-    &:first-child {
-        margin-top: 1rem;
-    }
-
-    &:last-child {
-        margin-bottom: 1rem;
-    }
+.tableMain {
+    // grid-column-start: 1;
+    // grid-column-end: 3;
+    grid-area: main;
+    width: 240px;
+    margin:auto
 }
 
-.chairRow {
-    display: flex;
-    flex-direction: row;
-    margin: 0 auto;
-}

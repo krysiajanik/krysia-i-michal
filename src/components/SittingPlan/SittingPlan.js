@@ -1,20 +1,21 @@
-import { element } from "prop-types";
 import React from "react";
-import Chair from "./Chair/Chair";
 import styles from "./SittingPlan.module.scss";
 import Table from "./Table/Table";
 
 class SittingPlan extends React.Component {
   render() {
-    const rowUp = "up";
-    const rowDown = "down";
-    const rowLeft = "left";
-    const rowRight = "right";
-
     return (
       <div className={styles.wrapper}>
-        <Table assignedTableNr={2} tableCapacity={8}></Table>
-        
+        <div className={styles.tableMain}>
+          <Table assignedTableNr={1}></Table>
+        </div>
+        <Table assignedTableNr={2}></Table>
+        <Table assignedTableNr={3}></Table>
+        <Table assignedTableNr={4}></Table>
+        <Table assignedTableNr={6}></Table>
+        <Table assignedTableNr={7}></Table>
+        <Table assignedTableNr={8}></Table>
+        <Table assignedTableNr={9}></Table>
       </div>
     );
   }
