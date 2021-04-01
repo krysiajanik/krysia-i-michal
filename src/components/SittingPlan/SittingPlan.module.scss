@@ -2,17 +2,17 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "main main main";
-
     align-items: center;
     width: 100%;
-    margin: 24px auto;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    @media screen and (max-width: 480px) {
+        grid-template-columns: 1fr;
+        grid-template-areas: "main";
+    }
 }
 
 .tableMain {
-    // grid-column-start: 1;
-    // grid-column-end: 3;
     grid-area: main;
-    width: 240px;
-    margin:auto
+    margin: auto;
 }
-

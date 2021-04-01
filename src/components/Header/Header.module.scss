@@ -16,22 +16,22 @@
     color: #013a1e;
     font-family: "Taviraj", serif;
     // font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 300;
     letter-spacing: 0.25em;
     padding: 0.8rem;
     margin: 0;
     &:first-letter {
-        font-size: 5rem;
+        font-size: 130%;
     }
 
     &Second {
         display: inline-block;
-        font-size: 4rem;
+        font-size: 3.5rem;
         font-weight: 300;
         letter-spacing: 0.25em;
         &:first-letter {
-            font-size: 5rem;
+            font-size: 130%;
         }
     }
 }
