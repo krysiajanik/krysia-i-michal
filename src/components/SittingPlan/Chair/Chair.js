@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import AppContext from "../../../context";
 import styles from "./Chair.module.scss";
 import PropTypes from "prop-types";
@@ -7,30 +7,44 @@ function Chair(props) {
   const [isShown, setIsShown] = useState(false);
   const [isMouseOver, setIsMouseOver] = useState(false);
   const context = useContext(AppContext);
+
   const tableNr = props.tableNr;
   const chairNr = props.chairNr;
   const person = props.person;
   const row = props.row;
 
+  const contextPerson =
+    context.tableNr === tableNr && context.chairNr === chairNr;
+
+  const scrollRef = useRef();
+
+  useEffect(() => {
+    console.log(scrollRef.current);
+    if (contextPerson && scrollRef.current) {
+      scrollRef.current.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  });
+
   function handleMouseOver(bool) {
     setIsShown(bool);
     setIsMouseOver(bool);
-    context.clearSelectedPerson()
+    context.clearSelectedPerson();
   }
 
   function handleClick() {
     if (!isMouseOver) {
       isShown ? setIsShown(false) : setIsShown(true);
+      context.clearSelectedPerson();
     }
   }
 
   function handleRender() {
-    if (
-      isShown ||
-      (context.tableNr === tableNr && context.chairNr === chairNr)
-    ) {
+    if (isShown || contextPerson) {
       return (
         <div
+          ref={scrollRef}
           className={styles.chairHighlight}
           onMouseEnter={() => handleMouseOver(true)}
           onMouseLeave={() => handleMouseOver(false)}
@@ -52,22 +66,17 @@ function Chair(props) {
           onMouseEnter={() => handleMouseOver(true)}
           onMouseLeave={() => handleMouseOver(false)}
           onClick={() => handleClick()}
-        >
-         
-        </div>
+        ></div>
       );
     }
   }
 
   return handleRender();
-
 }
 
 Chair.propTypes = {
   chairNr: PropTypes.number.isRequired,
   tableNr: PropTypes.number.isRequired,
-  person: PropTypes.string.isRequired,
-  tableNr: PropTypes.string.isRequired,
 };
 
 export default Chair;
