@@ -26,6 +26,7 @@ class SittingPlan extends React.Component {
           <Table assignedTableNr={7}></Table>
           <Table assignedTableNr={8}></Table>
           <Table assignedTableNr={9}></Table>
+          
         </div>
     );
   }

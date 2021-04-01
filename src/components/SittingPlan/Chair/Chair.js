@@ -23,6 +23,7 @@ function Chair(props) {
     if (contextPerson && scrollRef.current) {
       scrollRef.current.scrollIntoView({
         behavior: "smooth",
+        block: "center",
       });
     }
   });
