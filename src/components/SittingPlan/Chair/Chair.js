@@ -19,7 +19,6 @@ function Chair(props) {
   const scrollRef = useRef();
 
   useEffect(() => {
-    console.log(scrollRef.current);
     if (contextPerson && scrollRef.current) {
       scrollRef.current.scrollIntoView({
         behavior: "smooth",
