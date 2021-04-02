@@ -3,32 +3,38 @@ import styles from "./SittingPlan.module.scss";
 import Table from "./Table/Table";
 
 function SittingPlan() {
+  const [winWidth, setWinWidth] = useState(window.innerWidth);
   const [scale, setScale] = useState(1);
   const scaleRef = useRef(null);
 
   const translateRef = useRef(null);
   const [trslRatio, setTrslRatio] = useState(0);
 
-  useEffect(() => {
-    function handleScale() {
-      let winWidth = Math.min(
-        document.documentElement.clientWidth || 0,
-        window.innerWidth || 0
+  function handleScale() {
+    let newWinWidth = Math.min(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0
+    );
+
+    setWinWidth(newWinWidth);
+
+    if (scaleRef.current && winWidth < 680) {
+      setScale((winWidth / scaleRef.current.scrollWidth) * 0.65);
+      setTrslRatio(
+        (translateRef.current.scrollWidth - scaleRef.current.scrollWidth) / 2
       );
-      if (scaleRef.current && winWidth < 680) {
-        setScale((winWidth / scaleRef.current.scrollWidth) * 0.75);
-        setTrslRatio(
-          (translateRef.current.scrollWidth - scaleRef.current.scrollWidth) / 2
-        );
-      }
     }
+  }
+
+  useEffect(() => {
+    handleScale();
 
     window.addEventListener("resize", handleScale);
 
     return (_) => {
       window.removeEventListener("resize", handleScale);
     };
-  }, [scaleRef]);
+  }, []);
 
   const scaleStyle = {
     transform: "scale(" + scale + ") translate(-" + trslRatio + "px)",
