@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/krysia-i-michal/static/css/main.5108dd7e.chunk.css",
-    "main.js": "/krysia-i-michal/static/js/main.1a932d51.chunk.js",
-    "main.js.map": "/krysia-i-michal/static/js/main.1a932d51.chunk.js.map",
+    "main.js": "/krysia-i-michal/static/js/main.a093f55f.chunk.js",
+    "main.js.map": "/krysia-i-michal/static/js/main.a093f55f.chunk.js.map",
     "runtime-main.js": "/krysia-i-michal/static/js/runtime-main.7d8dcfeb.js",
     "runtime-main.js.map": "/krysia-i-michal/static/js/runtime-main.7d8dcfeb.js.map",
     "static/js/2.61fd72ad.chunk.js": "/krysia-i-michal/static/js/2.61fd72ad.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.7d8dcfeb.js",
     "static/js/2.61fd72ad.chunk.js",
     "static/css/main.5108dd7e.chunk.css",
-    "static/js/main.1a932d51.chunk.js"
+    "static/js/main.a093f55f.chunk.js"
   ]
 }
