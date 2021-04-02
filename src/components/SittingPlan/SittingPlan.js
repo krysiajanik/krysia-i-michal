@@ -5,25 +5,38 @@ import Table from "./Table/Table";
 function SittingPlan() {
   const [scale, setScale] = useState(1);
   const scaleRef = useRef(null);
-  const winWidth = Math.min(
-    document.documentElement.clientWidth || 0,
-    window.innerWidth || 0
-  );
+
+  const translateRef = useRef(null);
+  const [trslRatio, setTrslRatio] = useState(0);
 
   useEffect(() => {
-    if (scaleRef.current && winWidth < 680) {
-      setScale((winWidth / scaleRef.current.scrollWidth) * 0.8);
+    function handleScale() {
+      let winWidth = Math.min(
+        document.documentElement.clientWidth || 0,
+        window.innerWidth || 0
+      );
+      if (scaleRef.current && winWidth < 680) {
+        setScale((winWidth / scaleRef.current.scrollWidth) * 0.75);
+        setTrslRatio(
+          (translateRef.current.scrollWidth - scaleRef.current.scrollWidth) / 2
+        );
+      }
     }
+
+    window.addEventListener("resize", handleScale);
+
+    return (_) => {
+      window.removeEventListener("resize", handleScale);
+    };
   }, [scaleRef]);
 
   const scaleStyle = {
-    transform: "scale(" + scale + ")",
+    transform: "scale(" + scale + ") translate(-" + trslRatio + "px)",
   };
 
   return (
     <div className={styles.wrapper} ref={scaleRef}>
-      <div className={styles.tablePlan} style={scaleStyle}>
-        {console.log(winWidth, scaleRef, scale)}
+      <div className={styles.tablePlan} ref={translateRef} style={scaleStyle}>
         <div className={styles.tableMain}>
           <Table assignedTableNr={1}></Table>
         </div>
