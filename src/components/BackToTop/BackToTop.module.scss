@@ -1,0 +1,23 @@
+@keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+
+.buttonUp {
+    position: fixed; 
+    bottom: 2rem;
+    right: 0.5rem;
+    height: 24px;
+    width: 24px;
+    padding: 0;
+    border: none;
+    background: #FBFAFA;
+    border-radius: 50%;
+    animation: fade 0.3s;
+    transition: opacity 0.4s;
+
+}
