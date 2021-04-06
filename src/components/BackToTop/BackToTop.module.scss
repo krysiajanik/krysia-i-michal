@@ -3,7 +3,7 @@
       opacity: 0;
     }
     100% {
-      opacity: 0.5;
+      opacity: 1;
     }
   }
 
@@ -17,7 +17,14 @@
     border: none;
     background: #FBFAFA;
     border-radius: 50%;
-    animation: fade 0.3s;
-    transition: opacity 0.4s;
+    animation: fade ease-in-out 0.3s;
+    transition: transform  ease-in-out 0.3s;
+    &:hover {
+        transform: scale(1.2);
+    }
 
+}
+
+.noButton {
+    display: none;
 }
