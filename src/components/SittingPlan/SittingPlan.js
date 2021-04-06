@@ -41,11 +41,12 @@ function SittingPlan() {
   };
 
   return (
-    <div className={styles.wrapper} ref={scaleRef}>
-      <div className={styles.tablePlan} ref={translateRef} style={scaleStyle}>
+    <div className={styles.wrapper} >
+      <div className={styles.tablePlan} >
         <div className={styles.tableMain}>
           <Table assignedTableNr={1}></Table>
         </div>
+        <div className={styles.tables}>
         <Table assignedTableNr={2}></Table>
         <Table assignedTableNr={3}></Table>
         <Table assignedTableNr={4}></Table>
@@ -53,9 +54,14 @@ function SittingPlan() {
         <Table assignedTableNr={7}></Table>
         <Table assignedTableNr={8}></Table>
         <Table assignedTableNr={9}></Table>
+        </div>
+        
       </div>
     </div>
   );
 }
+
+{/* <div className={styles.wrapper} ref={scaleRef}> */}
+      {/* <div className={styles.tablePlan} ref={translateRef} style={scaleStyle}></div> */}
 
 export default SittingPlan;
