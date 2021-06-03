@@ -11,19 +11,31 @@
 }
 
 .tablePlan {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "main main main";
+    display: flex;
+    flex-flow: column nowrap;
     align-items: center;
     width: 100%;
     margin: 2rem auto;
     padding: 0 1rem;
     transform-origin: top center;
     // transform: translate( -50%, -50%);
-    
+    @media screen and (max-width: 480px) {
+        html {
+          padding: 0 0.5rem;
+        }}
+}
+
+.tables{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width:100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
 .tableMain {
-    grid-area: main;
+    flex: 3 ;
+    // grid-area: main;
     margin: auto;
 }
