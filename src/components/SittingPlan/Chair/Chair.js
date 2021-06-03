@@ -50,13 +50,17 @@ function Chair(props) {
           onMouseLeave={() => handleMouseOver(false)}
           onClick={() => handleClick()}
         >
-          <p
-            className={
-              row === "up" ? styles.personShowUp : styles.personShowDown
-            }
-          >
-            {person}
-          </p>
+          {tableNr === 1 ? (
+            <p className={styles.personShowUp}>{person}</p>
+          ) : (
+            <p
+              className={
+                row === "left" ? styles.personShowLeft : styles.personShowRight
+              }
+            >
+              {person}
+            </p>
+          )}
         </div>
       );
     } else {

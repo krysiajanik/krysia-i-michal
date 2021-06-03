@@ -73,7 +73,7 @@ export const sittingPlanArray = [
   },
   {
     firstName: "Patryk",
-    lastName: "Urbaniak (boczek)",
+    lastName: "Urbaniak",
     tableNr: 2,
     chairNr: 7,
   },
@@ -91,7 +91,7 @@ export const sittingPlanArray = [
   },
   {
     firstName: "Bartek",
-    lastName: "Skrabka +1",
+    lastName: "Skrabka+1",
     tableNr: 2,
     chairNr: 10,
   },
@@ -139,7 +139,7 @@ export const sittingPlanArray = [
   },
   {
     firstName: "Adam",
-    lastName: "Nowak + 1",
+    lastName: "Nowak+1",
     tableNr: 2,
     chairNr: 18,
   },
@@ -151,7 +151,7 @@ export const sittingPlanArray = [
   },
   {
     firstName: "Kamil",
-    lastName: "Bodzak + 1",
+    lastName: "Bodzak+1",
     tableNr: 2,
     chairNr: 20,
   },
@@ -229,7 +229,7 @@ export const sittingPlanArray = [
   },
   {
     firstName: "Marta",
-    lastName: "Chocian + 1",
+    lastName: "Chocian+1",
     tableNr: 3,
     chairNr: 13,
   },

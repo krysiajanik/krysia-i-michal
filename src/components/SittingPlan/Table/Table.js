@@ -50,7 +50,7 @@ function Table(props) {
                 tableNr={person.tableNr}
                 person={`${person.firstName} ${person.lastName}`}
                 key={`${person.tableNr}_${person.chairNr}`}
-                row={"up"}
+                row={"left"}
               ></Chair>
             ))}
           </div>
@@ -65,7 +65,7 @@ function Table(props) {
                 tableNr={person.tableNr}
                 person={`${person.firstName} ${person.lastName}`}
                 key={`${person.tableNr}_${person.chairNr}`}
-                row={"down"}
+                row={"right"}
               ></Chair>
             ))}
           </div>
