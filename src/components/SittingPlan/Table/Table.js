@@ -7,7 +7,6 @@ import Chair from "../Chair/Chair";
 const SittingArray = SittingPlanArray;
 
 function Table(props) {
-  
   const assignedTableNr = props.assignedTableNr;
 
   const tableArray = SittingArray.filter(
@@ -23,34 +22,42 @@ function Table(props) {
   const chairRowTwo = tableArray.filter((item) => item.chairNr > chairRowCount);
 
   return (
-    <div className={styles.wrapper} >
-        <div className={styles.chairRow}>
-          {assignedTableNr === 1
-            ? tableArray.map((person) => (
-                <Chair
-                  chairNr={person.chairNr}
-                  tableNr={person.tableNr}
-                  person={`${person.firstName} ${person.lastName}`}
-                  key={`${person.tableNr}_${person.chairNr}`}
-                  row={"up"}
-                ></Chair>
-              ))
-            : chairRowOne.map((person) => (
-                <Chair
-                  chairNr={person.chairNr}
-                  tableNr={person.tableNr}
-                  person={`${person.firstName} ${person.lastName}`}
-                  key={`${person.tableNr}_${person.chairNr}`}
-                  row={"up"}
-                ></Chair>
-              ))}
-        </div>
+    <>
+      {assignedTableNr === 1 ? (
+        <div className={styles.wrapperOne}>
+          <div className={styles.chairRowOne}>
+            {tableArray.map((person) => (
+              <Chair
+                chairNr={person.chairNr}
+                tableNr={person.tableNr}
+                person={`${person.firstName} ${person.lastName}`}
+                key={`${person.tableNr}_${person.chairNr}`}
+                row={"up"}
+              ></Chair>
+            ))}
+          </div>
 
-        <div className={styles.table}>
-          <p className={styles.tableNumber}>{assignedTableNr}</p>
+          <div className={styles.tableOne}>
+            <p className={styles.tableNumber}>{assignedTableNr}</p>
+          </div>
         </div>
+      ) : (
+        <div className={styles.wrapper}>
+          <div className={styles.chairRow}>
+            {chairRowOne.map((person) => (
+              <Chair
+                chairNr={person.chairNr}
+                tableNr={person.tableNr}
+                person={`${person.firstName} ${person.lastName}`}
+                key={`${person.tableNr}_${person.chairNr}`}
+                row={"up"}
+              ></Chair>
+            ))}
+          </div>
+          <div className={styles.table}>
+            <p className={styles.tableNumber}>{assignedTableNr}</p>
+          </div>
 
-        {assignedTableNr !== 1 ? (
           <div className={styles.chairRow}>
             {chairRowTwo.map((person) => (
               <Chair
@@ -62,8 +69,9 @@ function Table(props) {
               ></Chair>
             ))}
           </div>
-        ) : null}
-      </div>
+        </div>
+      )}
+    </>
   );
 }
 

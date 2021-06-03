@@ -50,10 +50,6 @@ function SittingPlan() {
         <Table assignedTableNr={2}></Table>
         <Table assignedTableNr={3}></Table>
         <Table assignedTableNr={4}></Table>
-        <Table assignedTableNr={6}></Table>
-        <Table assignedTableNr={7}></Table>
-        <Table assignedTableNr={8}></Table>
-        <Table assignedTableNr={9}></Table>
         </div>
         
       </div>
