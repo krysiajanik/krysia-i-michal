@@ -4,7 +4,9 @@ import Home from "./Home/Home";
 import Menu from "./Menu/Menu";
 import DrinkMenu from "./DrinkMenu/DrinkMenu";
 import SittingChart from "./SittingChart/SittingChart";
+import Photos from "./Photos/Photos";
 import Header from "../components/Header/Header";
+
 
 class Root extends React.Component {
   render() {
@@ -16,6 +18,7 @@ class Root extends React.Component {
           <Route path="/krysia-i-michal/menu" component={Menu} />
           <Route path="/krysia-i-michal/drinkmenu" component={DrinkMenu} />
           <Route path="/krysia-i-michal/sittingchart" component={SittingChart} />
+          <Route path="/krysia-i-michal/photos" component={Photos} />
         </Switch>
       </BrowserRouter>
     );

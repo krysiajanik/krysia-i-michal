@@ -20,6 +20,10 @@ const MenuDropdown = () => (
       <NavLink to="/krysia-i-michal/sittingchart" className={styles.menuItemLink}>
         <li className={styles.menuItem}>Gdzie siedzę?</li>
       </NavLink>
+
+      <NavLink to="/krysia-i-michal/photos" className={styles.menuItemLink}>
+        <li className={styles.menuItem}>Zdjęcia!</li>
+      </NavLink>
     </ul>
   </nav>
 );
