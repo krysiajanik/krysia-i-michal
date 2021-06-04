@@ -20,13 +20,19 @@ label {
     border-radius: 50%;
     margin: auto;
     color: #02341C;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 500;
     line-height: 3rem;
     text-align: center;
+    &:hover {
+        color: #FBFAFA;
+        background: #02341C;
+    }
 }
 
 .output {
+    width: 80%;
+    text-align: center;
 }
 
 .error {
