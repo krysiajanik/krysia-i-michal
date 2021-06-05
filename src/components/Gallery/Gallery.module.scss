@@ -1,0 +1,27 @@
+.imgView {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    margin: 3rem;
+    @media screen and (max-width: 520px) {
+        gap: 1rem;
+    }
+}
+
+.imgWrapper {
+    overflow: hidden;
+    height: 0;
+    padding: 50% 0;
+    position: relative;
+    opacity: 0.8;
+
+}
+
+.img {
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 150%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

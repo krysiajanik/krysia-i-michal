@@ -1,0 +1,48 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+label input {
+    height: 0;
+    width: 0;
+    opacity: 0;
+}
+
+label {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid #02341C;
+    border-radius: 50%;
+    margin: auto;
+    color: #02341C;
+    font-size: 2.25rem;
+    font-weight: 500;
+    line-height: 3rem;
+    text-align: center;
+    &:hover {
+        color: #FBFAFA;
+        background: #02341C;
+    }
+}
+
+.output {
+    width: 80%;
+    text-align: center;
+}
+
+.error {
+    @extend .filename;
+    color: rgb(170, 33, 33);
+}
+
+.filename {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
