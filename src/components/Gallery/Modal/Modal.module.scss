@@ -1,0 +1,21 @@
+.backdrop {
+position: fixed;
+display: flex;
+align-content: center;
+align-items: center;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background: rgba(0, 0, 0, 0.5);
+}
+
+.selectedImg {
+    display: block;
+    max-width: 75%;
+    max-height: 85%;
+    margin: 4rem auto;
+    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
+    border: 2px solid #FBFAFA;
+
+}
