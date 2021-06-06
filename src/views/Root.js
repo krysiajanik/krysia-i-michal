@@ -14,11 +14,11 @@ class Root extends React.Component {
       <BrowserRouter>
         <Header></Header>
         <Switch>
-          <Route exact path="/krysia-i-michal/" component={Home} />
-          <Route path="/krysia-i-michal/menu" component={Menu} />
-          <Route path="/krysia-i-michal/drinkmenu" component={DrinkMenu} />
-          <Route path="/krysia-i-michal/sittingchart" component={SittingChart} />
-          <Route path="/krysia-i-michal/photos" component={Photos} />
+          <Route exact path="/" component={Home} />
+          <Route path="/menu" component={Menu} />
+          <Route path="/drinkmenu" component={DrinkMenu} />
+          <Route path="/sittingchart" component={SittingChart} />
+          <Route path="/photos" component={Photos} />
         </Switch>
       </BrowserRouter>
     );

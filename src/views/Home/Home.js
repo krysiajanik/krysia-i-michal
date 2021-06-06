@@ -6,25 +6,25 @@ const Home = () => (
   <nav>
     <ul className={styles.wrapper}>
       <li className={styles.menuItem}>
-        <NavLink to="/krysia-i-michal/menu" className={styles.menuItemLink}>
+        <NavLink to="/menu" className={styles.menuItemLink}>
           <p className={styles.menuItemText}>Co jemy?</p>
         </NavLink>
       </li>
 
       <li className={styles.menuItem}>
-        <NavLink to="/krysia-i-michal/drinkmenu" className={styles.menuItemLink}>
+        <NavLink to="/drinkmenu" className={styles.menuItemLink}>
           <p className={styles.menuItemText}>Co pijemy?</p>
         </NavLink>
       </li>
 
       <li className={styles.menuItem}>
-        <NavLink to="/krysia-i-michal/sittingchart" className={styles.menuItemLink}>
+        <NavLink to="/sittingchart" className={styles.menuItemLink}>
           <p className={styles.menuItemText}>Gdzie siedzę?</p>
         </NavLink>
       </li>
 
       <li className={styles.menuItem}>
-        <NavLink to="/krysia-i-michal/photos" className={styles.menuItemLink}>
+        <NavLink to="/photos" className={styles.menuItemLink}>
           <p className={styles.menuItemText}>Zdjęcia!</p>
         </NavLink>
       </li>
