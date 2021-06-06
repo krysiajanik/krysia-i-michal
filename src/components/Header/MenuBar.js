@@ -22,7 +22,7 @@ class MenuBar extends React.Component {
     return (
       <>
         <button className={styles.buttonHome}>
-          <a href="/krysia-i-michal/">
+          <a href="/">
             <HomeIcon />
           </a>
         </button>
