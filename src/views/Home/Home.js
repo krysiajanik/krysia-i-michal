@@ -22,6 +22,12 @@ const Home = () => (
           <p className={styles.menuItemText}>Gdzie siedzę?</p>
         </NavLink>
       </li>
+
+      <li className={styles.menuItem}>
+        <NavLink to="/krysia-i-michal/photos" className={styles.menuItemLink}>
+          <p className={styles.menuItemText}>Zdjęcia!</p>
+        </NavLink>
+      </li>
     </ul>
   </nav>
 );
