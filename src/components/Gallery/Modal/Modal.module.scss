@@ -19,3 +19,23 @@ background: rgba(0, 0, 0, 0.5);
     border: 2px solid #FBFAFA;
 
 }
+
+.button {
+    height: 4rem;
+    width: 4rem;
+    margin: 1rem;
+    border: none;
+    background: none;
+    // display: flex;
+    // place-content: center;
+    text-align: center;
+    }
+
+.back {
+    margin: auto;
+    display: block;
+}
+
+.forward {
+    @extend .back;
+}
