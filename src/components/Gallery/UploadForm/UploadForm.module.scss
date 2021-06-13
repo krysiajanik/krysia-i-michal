@@ -4,6 +4,25 @@
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    &Label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border: 2px solid #02341c;
+        border-radius: 50%;
+        margin: auto;
+        color: #02341c;
+        font-size: 2.5rem;
+        font-weight: 500;
+        line-height: 3rem;
+        text-align: center;
+        &:hover {
+            color: #fbfafa;
+            background: #02341c;
+        }
+    }
 }
 
 label input {
@@ -13,21 +32,6 @@ label input {
 }
 
 label {
-    display: block;
-    width: 3rem;
-    height: 3rem;
-    border: 2px solid #02341C;
-    border-radius: 50%;
-    margin: auto;
-    color: #02341C;
-    font-size: 2.25rem;
-    font-weight: 500;
-    line-height: 3rem;
-    text-align: center;
-    &:hover {
-        color: #FBFAFA;
-        background: #02341C;
-    }
 }
 
 .output {

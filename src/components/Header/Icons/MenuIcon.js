@@ -3,8 +3,8 @@ import * as React from "react";
 function MenuIcon(props) {
   return (
     <svg
-           viewBox="0 0 24 24"
-      width="2rem"
+      viewBox="0 0 3rem 3rem"
+      width="2.5rem"
       height="2rem"
       {...props}
 

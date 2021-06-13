@@ -22,9 +22,9 @@ const UploadForm = () => {
 
   return (
     <form className={styles.form}>
-        <label>
+        <label className={styles.formLabel}>
         <input type="file" onChange={handleChange} />
-        <span>+</span>
+        <span className={styles.addButton}>+</span>
         </label>
      
       <div className={styles.output}>
