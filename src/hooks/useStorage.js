@@ -5,6 +5,7 @@ const useStorage = (file) => {
     const [ progress, setProgress ] = useState(0);
     const [ error, setError ] = useState(null);
     const [ url, setUrl] = useState(null);
+    const [ authorName, setAuthorName ] = useState(null)
 
     useEffect(() => {
         //references
@@ -16,15 +17,16 @@ const useStorage = (file) => {
             setProgress(percentage);
         }, (err) => {
             setError(err);
-        }, async () => {
+        },  async () => {
             const url = await storageRef.getDownloadURL();
             const createdAt = timestamp();
-            collectionRef.add({ url, createdAt });
+            setAuthorName(file.authorName)
+            collectionRef.add({ url, createdAt, authorName });
             setUrl(url)
         })
     }, [file])
 
-        return { progress, url, error};
+        return { progress, url, error, authorName};
 }
 
 export default useStorage;

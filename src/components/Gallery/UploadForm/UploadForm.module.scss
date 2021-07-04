@@ -23,15 +23,49 @@
             background: #02341c;
         }
     }
+
+    &Button {
+        border: 2px solid #02341c;
+        background: #fbfafa;
+        border-radius: 4px;
+        margin: 16px auto;
+        color: #02341c;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.5rem;
+        text-align: center;
+        &:hover {
+            color: #fbfafa;
+            background: #02341c;
+        }
+    }
+}
+
+.authorName {
+    width: 240px;
+    background: none;
+    border: 1px solid #013a1e;
+    border-radius: 4px;
+    margin: 1rem 1rem 0 1rem;
+    padding: 6px;
+    color: #013a1e;
+    text-align: center;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    &:focus {
+        outline: 1px rgba(177, 205, 193, 0.027) solid;
+    }
+    &::placeholder {
+        color: #adc1b9;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+    }
 }
 
 label input {
     height: 0;
     width: 0;
     opacity: 0;
-}
-
-label {
 }
 
 .output {
