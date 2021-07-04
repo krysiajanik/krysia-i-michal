@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "@firebase/storage";
 import "@firebase/firestore";
+// import "firebase/app-check";
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -18,5 +19,8 @@ firebase.initializeApp(firebaseConfig);
 const projectStorage = firebase.storage();
 const projectFirestore = firebase.firestore();
 const timestamp = firebase.firestore.FieldValue.serverTimestamp;
+
+// const appCheck = firebase.appCheck()
+// appCheck.activate('6LeqTHUbAAAAADWSRN5K6bmC6nIWq-D-oFtQ7c1y');
 
 export { projectStorage, projectFirestore, timestamp };
