@@ -45,7 +45,7 @@ const UploadForm = () => {
           {tempFile && 
           <>
           <p className={styles.filename}>{tempFile.name}</p>
-          <input className={styles.authorName} type="text" placeholder="Twoje imię" id="authorName" onChange={(e)=>setAuthName(e.target.value)}></input>
+          <input className={styles.authorName} required type="text" placeholder="Twoje imię" id="authorName" onChange={(e)=>setAuthName(e.target.value)}></input>
           <button className={styles.formButton} onClick={addFile}>DODAJ</button>
           </>
       }

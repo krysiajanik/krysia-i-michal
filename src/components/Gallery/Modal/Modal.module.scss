@@ -1,23 +1,41 @@
 .backdrop {
-position: fixed;
-display: flex;
-align-content: center;
-align-items: center;
-top: 0;
-left: 0;
-width: 100vw;
-height: 100vh;
-background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.selectedImgWrapper {
+    display: block;
+    width: 100%;
+    height: 85vh;
+    margin: 2rem auto;   
 }
 
 .selectedImg {
     display: block;
     max-width: 75%;
-    max-height: 85%;
-    margin: 4rem auto;
+    height: 100%;
+    margin: auto;
     box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
     border: 2px solid #FBFAFA;
+    border-bottom-width: 1.8rem;
+}
 
+.author {
+    position: relative;
+    text-align: center;
+    bottom:2.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #02341c;
+    font-size: 1.2rem;
+    font-weight: 400;
 }
 
 .button {
@@ -26,8 +44,6 @@ background: rgba(0, 0, 0, 0.5);
     margin: 1rem;
     border: none;
     background: none;
-    // display: flex;
-    // place-content: center;
     text-align: center;
     }
 
@@ -40,13 +56,3 @@ background: rgba(0, 0, 0, 0.5);
     @extend .back;
 }
 
-.author {
-    position: absolute;
-    top:2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #FBFAFA;
-    font-size: 2rem;
-    
-    
-}
