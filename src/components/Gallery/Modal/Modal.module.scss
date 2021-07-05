@@ -39,3 +39,14 @@ background: rgba(0, 0, 0, 0.5);
 .forward {
     @extend .back;
 }
+
+.author {
+    position: absolute;
+    top:2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #FBFAFA;
+    font-size: 2rem;
+    
+    
+}
