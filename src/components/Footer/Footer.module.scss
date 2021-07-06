@@ -1,0 +1,15 @@
+.footer {
+    margin-top: 25vh;
+    padding: 1rem;
+    background: #adc1b95b;
+    position: relative;
+    bottom: -5rem;
+    width: 100%;
+
+    &Content {
+        font-size: 1rem;
+        text-align: center;
+        color: #02341c;
+        margin: 0;
+    }
+}

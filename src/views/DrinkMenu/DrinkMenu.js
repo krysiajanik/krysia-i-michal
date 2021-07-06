@@ -2,7 +2,8 @@ import React from "react";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import Section from "../../components/Section/Section";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
-
+import BackToTop from "../../components/BackToTop/BackToTop";
+import Footer from "../../components/Footer/Footer";
 
 const DrinkMenu = () => {
   const wines = [
@@ -40,10 +41,10 @@ const DrinkMenu = () => {
       {beverages.map((beverage) => (
         <Section menuItem={beverage} />
       ))}
-
+      <BackToTop/>
+      <Footer/>
     </>
   );
 }; 
-
 
 export default DrinkMenu;

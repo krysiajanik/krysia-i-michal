@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import PropTypes from "prop-types";
 import styles from "./BackToTop.module.scss";
 
 function BackToTop() {
@@ -32,8 +31,5 @@ function BackToTop() {
   );
 }
 
-// BackToTop.propTypes = {
-//     href: PropTypes.string.isRequired,
-//   };
 
 export default BackToTop;

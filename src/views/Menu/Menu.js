@@ -2,6 +2,9 @@ import React from "react";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import Section from "../../components/Section/Section";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import BackToTop from "../../components/BackToTop/BackToTop";
+import Footer from "../../components/Footer/Footer";
+
 
 const Menu = () => {
   const dinners = [
@@ -45,7 +48,8 @@ const Menu = () => {
       {cakes.map((cake) => (
         <Section menuItem={cake} />
       ))}
-
+      <BackToTop/>
+      <Footer/>
     </>
   );
 };

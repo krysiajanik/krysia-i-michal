@@ -24,11 +24,6 @@ const UploadForm = () => {
     }
   };
 
-  const validateAuthor = () => {
-
-
-  }
-
   const addFile = (e) => {
     e.preventDefault()
 

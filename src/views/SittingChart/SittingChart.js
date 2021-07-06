@@ -4,6 +4,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import SittingPlan from "../../components/SittingPlan/SittingPlan";
 import BackToTop from "../../components/BackToTop/BackToTop";
+import Footer from "../../components/Footer/Footer";
 
 class SittingChart extends React.Component {
   state = {
@@ -46,6 +47,7 @@ class SittingChart extends React.Component {
           <SittingPlan></SittingPlan>
           <BackToTop></BackToTop>
         </AppContext.Provider>
+        <Footer />
       </>
     );
   }
