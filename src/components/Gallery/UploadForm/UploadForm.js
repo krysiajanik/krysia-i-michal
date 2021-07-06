@@ -31,9 +31,7 @@ const UploadForm = () => {
 
     if (!authName) {
       window.alert("Podpisz swoje zdjęcie")
-    }
-
-    if (authName && authName.length < 3) {
+    } else if (authName && authName.length < 3) {
       window.alert("Imię musi mieć przynajmniej trzy znaki")
     } else {
       newFile.authorName = authName
