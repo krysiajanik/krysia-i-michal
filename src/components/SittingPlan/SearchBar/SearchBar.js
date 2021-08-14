@@ -1,8 +1,8 @@
 import React from "react";
-import AppContext from "../../context";
+import AppContext from "../../../context";
 import styles from "./SearchBar.module.scss";
 import SearchIcon from "./SearchIcon.js";
-import SittingPlanArray from "../../components/SittingPlan/SittingPlanArray";
+import SittingPlanArray from "../SittingPlanArray";
 import ClearSearch from "./ClearSearch.js"
 
 const SittingArray = SittingPlanArray;

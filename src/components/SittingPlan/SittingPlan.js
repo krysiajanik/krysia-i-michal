@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./SittingPlan.module.scss";
 import Table from "./Table/Table";
+import SearchBar from "./SearchBar/SearchBar";
 
 function SittingPlan() {
   const [winWidth, setWinWidth] = useState(window.innerWidth);
@@ -41,23 +42,26 @@ function SittingPlan() {
   };
 
   return (
-    <div className={styles.wrapper} >
-      <div className={styles.tablePlan} >
-        <div className={styles.tableMain}>
-          <Table assignedTableNr={1}></Table>
+    <>
+      <SearchBar></SearchBar>
+      <div  className={styles.tableWrapper} >
+        <div className={styles.tablePlan} >
+          <div className={styles.tableMain}>
+            <Table assignedTableNr={1}></Table>
+          </div>
+          <div className={styles.tables}>
+            <Table assignedTableNr={2}></Table>
+            <Table assignedTableNr={3}></Table>
+            <Table assignedTableNr={4}></Table>
+          </div>
+
         </div>
-        <div className={styles.tables}>
-        <Table assignedTableNr={2}></Table>
-        <Table assignedTableNr={3}></Table>
-        <Table assignedTableNr={4}></Table>
-        </div>
-        
       </div>
-    </div>
+    </>
   );
 }
 
-{/* <div className={styles.wrapper} ref={scaleRef}> */}
-      {/* <div className={styles.tablePlan} ref={translateRef} style={scaleStyle}></div> */}
+{/* <div className={styles.wrapper} ref={scaleRef}> */ }
+{/* <div className={styles.tablePlan} ref={translateRef} style={scaleStyle}></div> */ }
 
 export default SittingPlan;

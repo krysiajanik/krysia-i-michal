@@ -1,4 +1,4 @@
-.wrapper {
+.tableWrapper {
     display: flex;
     text-align: center;
     flex-direction: row;
@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
     width: 100vw;
+    max-width: 840px;
     margin: 0 auto;
 
 }
@@ -28,7 +29,7 @@
 .tables{
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
+    align-items: start;
     width:100%;
     margin: 2rem auto;
     padding: 0 1rem;

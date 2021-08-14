@@ -1,0 +1,27 @@
+.buttonWrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    margin: 2rem 0;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.button {
+    font-family: "Montserrat", sans-serif;
+    background: none;
+    color: #1f2d24;
+    border: none;
+    margin:1rem;
+    &:hover {
+        transform: scale(1.05);
+        border: 1.5px solid #1f2d24;
+    }
+    &Selected {
+        color: #Fbfbfb;
+        border: #1f2d24;
+        background: #1f2d24;
+    }
+}

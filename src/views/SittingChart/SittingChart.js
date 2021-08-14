@@ -1,7 +1,8 @@
 import React from "react";
 import AppContext from "../../context";
 import PageHeader from "../../components/PageHeader/PageHeader";
-import SearchBar from "../../components/SearchBar/SearchBar";
+import SwitchView from "../../components/SittingPlan/SwitchView/SwitchView";
+import SearchBar from "../../components/SittingPlan/SearchBar/SearchBar";
 import SittingPlan from "../../components/SittingPlan/SittingPlan";
 import BackToTop from "../../components/BackToTop/BackToTop";
 import Footer from "../../components/Footer/Footer";
@@ -11,6 +12,7 @@ class SittingChart extends React.Component {
     selectedId: ["", ""],
     tableNr: 0,
     chairNr: 0,
+    view: 1,
   };
 
 
@@ -29,12 +31,17 @@ class SittingChart extends React.Component {
       });
   }
 
+  changeView = (view) => {
+    this.setState({view: view})
+  }
+
   render() {
     const contextElements = {
        updateSelectedPerson: this.updateSelectedPerson,
        clearSelectedPerson: this.clearSelectedPerson,
        tableNr: this.state.tableNr,
        chairNr: this.state.chairNr,
+       changeView: this.changeView,
     };
 
     return (
@@ -43,8 +50,10 @@ class SittingChart extends React.Component {
         <AppContext.Provider
           value={contextElements}
         >
-          <SearchBar></SearchBar>
-          <SittingPlan></SittingPlan>
+          <SwitchView ></SwitchView>
+           {console.log(this.state.view)}
+          {this.state.view==1 ? <SittingPlan></SittingPlan> : null}
+          
           <BackToTop></BackToTop>
         </AppContext.Provider>
         <Footer />
