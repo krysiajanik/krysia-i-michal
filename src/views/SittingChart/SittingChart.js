@@ -41,6 +41,7 @@ class SittingChart extends React.Component {
        clearSelectedPerson: this.clearSelectedPerson,
        tableNr: this.state.tableNr,
        chairNr: this.state.chairNr,
+       view: this.state.view,
        changeView: this.changeView,
     };
 

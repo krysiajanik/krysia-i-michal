@@ -15,13 +15,20 @@
     color: #1f2d24;
     border: none;
     margin:1rem;
+    padding: 4px;
+    &:active{
+        border-width: 1px;
+    }
     &:hover {
         transform: scale(1.05);
         border: 1.5px solid #1f2d24;
     }
     &Selected {
-        color: #Fbfbfb;
-        border: #1f2d24;
-        background: #1f2d24;
+        @extend .button;
+        font-weight: 600;
+        color: #1f2d24;
+        border: 1px solid #1f2d24;
+        background: none;
+        
     }
 }

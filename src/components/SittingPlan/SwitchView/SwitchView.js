@@ -16,8 +16,8 @@ const SwitchView = () => {
 
     return (
         <div className={styles.buttonWrapper}>
-            <button className={styles.button} onClick={handleClickSearch} >WYSZUKAJ</button>
-            <button className={styles.button} onClick={handleClickList} >LISTA GOŚCI</button>
+            <button className={context.view==1 ? styles.buttonSelected : styles.button} onClick={handleClickSearch} >WYSZUKAJ</button>
+            <button className={context.view==2 ? styles.buttonSelected : styles.button} onClick={handleClickList} >LISTA GOŚCI</button>
     
         </div>
   );
