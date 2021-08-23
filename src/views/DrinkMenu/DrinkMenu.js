@@ -31,15 +31,15 @@ const DrinkMenu = () => {
        <PageHeader>Drink Menu</PageHeader>
       <SectionTitle>Wina</SectionTitle>
       {wines.map((wine) => (
-        <Section menuItem={wine} />
+        <Section sectionItem={wine} />
       ))}
       <SectionTitle>Alkohole Mocne</SectionTitle>
       {spirits.map((spirit) => (
-        <Section menuItem={spirit} />
+        <Section sectionItem={spirit} />
       ))}
       <SectionTitle>Napoje Zimne</SectionTitle>
       {beverages.map((beverage) => (
-        <Section menuItem={beverage} />
+        <Section sectionItem={beverage} />
       ))}
       <BackToTop/>
       <Footer/>

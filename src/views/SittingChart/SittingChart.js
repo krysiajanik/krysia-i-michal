@@ -2,10 +2,10 @@ import React from "react";
 import AppContext from "../../context";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import SwitchView from "../../components/SittingPlan/SwitchView/SwitchView";
-import SearchBar from "../../components/SittingPlan/SearchBar/SearchBar";
 import SittingPlan from "../../components/SittingPlan/SittingPlan";
 import BackToTop from "../../components/BackToTop/BackToTop";
 import Footer from "../../components/Footer/Footer";
+import SittingList from "../../components/SittingPlan/SittingList";
 
 class SittingChart extends React.Component {
   state = {
@@ -53,7 +53,7 @@ class SittingChart extends React.Component {
         >
           <SwitchView ></SwitchView>
            {console.log(this.state.view)}
-          {this.state.view==1 ? <SittingPlan></SittingPlan> : null}
+          {this.state.view==1 ? <SittingPlan></SittingPlan> : <SittingList></SittingList>}
           
           <BackToTop></BackToTop>
         </AppContext.Provider>

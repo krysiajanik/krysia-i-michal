@@ -97,7 +97,7 @@ export const sittingPlanArray = [
   },
   {
     firstName: 'Patryk',
-    lastName: 'Urbaniak (boczek)',
+    lastName: 'Urbaniak',
     tableNr: 2,
     chairNr: 12,
   },
@@ -199,7 +199,7 @@ export const sittingPlanArray = [
   },
   {
     firstName: 'Iwona',
-    lastName: 'Miller',
+    lastName: 'Miler',
     tableNr: 3,
     chairNr: 11,
   },

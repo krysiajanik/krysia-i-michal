@@ -38,15 +38,15 @@ const Menu = () => {
       <PageHeader>Menu</PageHeader>
       <SectionTitle>Obiad</SectionTitle>
       {dinners.map((dinner) => (
-        <Section menuItem={dinner} />
+        <Section sectionItem={dinner} />
       ))}
       <SectionTitle>Zimny stół</SectionTitle>
       {colds.map((cold) => (
-        <Section menuItem={cold} />
+        <Section sectionItem={cold} />
       ))}
       <SectionTitle>Ciasta</SectionTitle>
       {cakes.map((cake) => (
-        <Section menuItem={cake} />
+        <Section sectionItem={cake} />
       ))}
       <BackToTop/>
       <Footer/>
