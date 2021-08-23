@@ -24,6 +24,11 @@ const MenuDropdown = () => (
       <NavLink to="/photos" className={styles.menuItemLink}>
         <li className={styles.menuItem}>Zdjęcia!</li>
       </NavLink>
+
+      <NavLink to="/faq" className={styles.menuItemLink}>
+        <li className={styles.menuItem}>FAQ</li>
+      </NavLink>
+
     </ul>
   </nav>
 );

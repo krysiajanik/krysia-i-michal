@@ -4,6 +4,7 @@ import Home from "./Home/Home";
 import Menu from "./Menu/Menu";
 import DrinkMenu from "./DrinkMenu/DrinkMenu";
 import SittingChart from "./SittingChart/SittingChart";
+import Questions from "./Questions/Questions";
 import Photos from "./Photos/Photos";
 import Header from "../components/Header/Header";
 
@@ -19,6 +20,7 @@ class Root extends React.Component {
           <Route path="/drinkmenu" component={DrinkMenu} />
           <Route path="/sittingchart" component={SittingChart} />
           <Route path="/photos" component={Photos} />
+          <Route path="/faq" component={Questions} />
         </Switch>
       </BrowserRouter>
     );

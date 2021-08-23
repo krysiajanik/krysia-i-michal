@@ -28,6 +28,13 @@ const Home = () => (
           <p className={styles.menuItemText}>Zdjęcia!</p>
         </NavLink>
       </li>
+
+      <li className={styles.menuItem}>
+        <NavLink to="/faq" className={styles.menuItemLink}>
+          <p className={styles.menuItemText}>FAQ</p>
+        </NavLink>
+      </li>
+
     </ul>
   </nav>
 );
