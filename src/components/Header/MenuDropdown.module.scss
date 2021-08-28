@@ -18,7 +18,7 @@
     background-color: #02341C;
     position: absolute;
     width: 100%;
-    top: 2.5rem;
+    top: 36px;
     right: 0;
     animation: cascade 300ms ease-in-out forwards;
     transform-origin: top center;
@@ -32,8 +32,14 @@
     font-size: 1.5rem;
     font-weight: 300;
     
-    padding: 1rem 1rem;
+    padding: 1.5rem 1rem;
     text-align: center;
+    text-transform: uppercase;
+    @media screen and (max-width: 520px) {
+        font-size: 1.8rem;}
+    &:first-letter {
+        font-size: 130%;
+    }
 
     &:hover {
         border-bottom: 0.01rem #4a5f558b;

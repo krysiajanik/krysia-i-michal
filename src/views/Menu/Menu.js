@@ -21,9 +21,13 @@ const Menu = () => {
     "Surówka z buraczków",
   ];
 
-  const warms = [
+  const dinnerOne = [
     "Zupa gulaszowa podana w chlebku",
+  ];
+  const dinnerTwo = [
     "Gołąbki w sosie z leśnych grzybów",
+  ];
+  const dinnerThree = [
     "Żurek z jajkiem",
   ];
 
@@ -60,9 +64,17 @@ const Menu = () => {
       {dinners.map((dinner) => (
         <Section sectionItem={dinner} />
       ))}
-      <SectionTitle>Dania na ciepło</SectionTitle>
-      {warms.map((warm) => (
-        <Section sectionItem={warm} />
+      <SectionTitle>Kolacja I</SectionTitle>
+      {dinnerOne.map((warmOne) => (
+        <Section sectionItem={warmOne} />
+      ))}
+      <SectionTitle>Kolacja II</SectionTitle>
+      {dinnerTwo.map((warmTwo) => (
+        <Section sectionItem={warmTwo} />
+      ))}
+      <SectionTitle>Kolacja III</SectionTitle>
+      {dinnerThree.map((warmThree) => (
+        <Section sectionItem={warmThree} />
       ))}
       <SectionTitle>Zimny stół</SectionTitle>
       {colds.map((cold) => (
