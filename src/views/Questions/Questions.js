@@ -35,10 +35,10 @@ const Questions = () => {
             <Answer>To zależy czego.</Answer>
 
             <Question>8. Czy ślub jest w ogóle ważny, skoro nie ma oczepin?</Question>
-            <Answer>Ku ogrmonemu zdziwieniu wszystkich - jak najbardziej.</Answer>
+            <Answer>Ku ogromnemu zdziwieniu wszystkich - jak najbardziej.</Answer>
 
             <Question>9. O co chodzi z tą wykreślanką?</Question>
-            <Answer>W tym gąszczu znaków zostały ukryte imiona i nazwiska wszystkich gości obecnych na weselu. Zabawa polega na zlokalizowaniu i zakreśleniu siebie. Taka alternatywan wersja księgi gości.</Answer>
+            <Answer>W tym gąszczu znaków zostały ukryte imiona i nazwiska wszystkich gości obecnych na weselu. Zabawa polega na zlokalizowaniu i zakreśleniu siebie. Taka alternatywna wersja księgi gości.</Answer>
 
             <Question>10. Co znaczy FAQ?</Question>
             <Answer>Jest to akronim z angielskiego Frequently Asked Questions - czyli często zadawane pytania. Tradycyjnie jest to sekcja aplikacji/strony internetowej, gdzie można znaleźć odpowiedzi na pytania nurtujące większość użytkowników, coby nie trzeba było się powtarzać.</Answer>
