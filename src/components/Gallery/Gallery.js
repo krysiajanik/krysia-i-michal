@@ -30,6 +30,7 @@ const Gallery = () => {
     return(
         <>
         <UploadForm />
+        {docs.length===0 && <p className={styles.msg}>Na razie nic tu nie ma! Jeśli masz zdjęcia z wesela i chesz się podzielić, dodaj pierwsze zdjęcie używając zielonego plusa.</p>}
         <div className={styles.imgView}>
             {docs && docs.map(doc => (
                 <div className={styles.imgWrapper} key={doc.id}
