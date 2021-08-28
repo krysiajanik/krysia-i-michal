@@ -8,29 +8,49 @@ import Footer from "../../components/Footer/Footer";
 
 const Menu = () => {
   const dinners = [
-    "Krem z dyni",
-    "Karkówka w sosie",
-    "Filet z kurczaka",
-    "Pstrąg pieczony z cytryną",
+    "Krem z dyni podany z płatkami migdałów",
+    "Roladka z kurczaka ze szpinakiem i serem feta",
+    "Zrazy wieprzowe w sosie z leśnych grzybów",
+    "Filety z pstrąga pieczone z cytryną",
+    "Karkówka szpikowana czosnkiem",
     "Kluski śląskie",
-    "Puree z ziemniaków",
+    "Ziemniaczki z koperkiem",
     "Kolorowy ryż",
+    "Kapusta zasmażana",
+    "Warzywa na parze",
+    "Surówka z buraczków",
+  ];
+
+  const warms = [
+    "Zupa gulaszowa podana w chlebku",
+    "Gołąbki w sosie z leśnych grzybów",
+    "Żurek z jajkiem",
   ];
 
   const colds = [
+    "Pomidorki z mozzarellą i bazylią",
     "Sałatka grecka",
-    "Sałatka jarzynowa",
-    "Śledzie",
-    "Deska wędlin",
-    "Deska serów",
+    "Staropolskie mięsa pieczone",
+    "Deska wędlin i serów",
+    "Śledzie w dwóch odsłonach",
+    "Ruloniki z szynki z sałatką jarzynową",
+    "Sałatka lazurowa z gruszką i orzechami",
+    "Jajka w sosie tatarskim",
+    "Galaretki drobiowe",
+    "Pierś z kurczaka z serkiem i suszonymi pomidorami",
+    
   ];
 
   const cakes = [
-    "Sernik",
-    "Jabłecznik",
+    "Sernik królewski",
+    "Stefanka",
     "Ciasto czekoladowe",
-    "Karpatka",
-    "Biszkopt z truskawkami i kremem",
+    "Miodownik",
+    "Pani Walewska",
+    "Ciasto marchewkowe",
+    "Biszkopt z borówką amerykańską",
+    "Biszkopt z malinami",
+    "Ciasta niespodzianki - sprawdźcie sami!",
   ];
 
   return (
@@ -39,6 +59,10 @@ const Menu = () => {
       <SectionTitle>Obiad</SectionTitle>
       {dinners.map((dinner) => (
         <Section sectionItem={dinner} />
+      ))}
+      <SectionTitle>Dania na ciepło</SectionTitle>
+      {warms.map((warm) => (
+        <Section sectionItem={warm} />
       ))}
       <SectionTitle>Zimny stół</SectionTitle>
       {colds.map((cold) => (

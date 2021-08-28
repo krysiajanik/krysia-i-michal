@@ -7,28 +7,33 @@ import Footer from "../../components/Footer/Footer";
 
 const DrinkMenu = () => {
   const wines = [
-    "Wino białe półwytrawne",
-    "Wino czerwone półwytrawne",
-    "Prosecco",
+    "Gruzińskie wino białe półwytrawne",
+    "Gruzińskie wino czerwone półwytrawne",
   ];
 
   const spirits = [
     "Wódka",
     "Gin",
-    "Whisky",
   ];
 
   const beverages = [
     "Sok pomarańczowy",
     "Sok jabłkowy",
     "Tonik",
+    "Tonik bez cukru",
     "Coca-cola",
-    "Sprite",
+    "Coca-cola zero",
+    "Woda z cytryną",
+    "Na życzenie dla abstynentów: Piwo bezalkoholowe",
+  ];
+  const warmBev = [
+    "Herbata",
+    "Kawa",
   ];
 
   return (
     <>
-       <PageHeader>Drink Menu</PageHeader>
+      <PageHeader>Drink Menu</PageHeader>
       <SectionTitle>Wina</SectionTitle>
       {wines.map((wine) => (
         <Section sectionItem={wine} />
@@ -41,10 +46,14 @@ const DrinkMenu = () => {
       {beverages.map((beverage) => (
         <Section sectionItem={beverage} />
       ))}
-      <BackToTop/>
-      <Footer/>
+      <SectionTitle>Napoje Ciepłe</SectionTitle>
+      {warmBev.map((bev) => (
+        <Section sectionItem={bev} />
+      ))}
+      <BackToTop />
+      <Footer />
     </>
   );
-}; 
+};
 
 export default DrinkMenu;
